@@ -1,4 +1,4 @@
-package main
+package time
 
 import (
 	"sync"
@@ -107,11 +107,11 @@ func doTask(l *list.List){
 func timeOut(){
 	fmt.Println("timeOut")
 }
-
+/*
 func main() {
 	w := NewTimingWheel(1*time.Second, 10)
 	
 	w.Add(5 * time.Second,timeOut)
 	
 	time.Sleep(1000*time.Second) 
-}
+}*/
