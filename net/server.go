@@ -1,4 +1,4 @@
-package server
+package net
 
 import (
 	"fmt"
@@ -29,21 +29,17 @@ func (this *Server) Start(addr string)  {
 			fmt.Println("srv.Accept err|", err)
 			return 
 		}
-		conn :=new(Connection) //此处考虑池化
-		conn.Session=session
-		
-		this.connectCallback(conn)
-		
+		conn:= this.connectCallback(session) //此处考虑池化
 		go func(){
 			for{
 				var msg []byte
-				err = conn.session.Receive(msg)
+				err = conn.Session.Receive(msg)
 				if err!=nil{
 					fmt.Println(" session.Receive err|", err)
-					this.closeCallback(conn)
+					this.closeCallback()
 					return 
 				}
-				this.messageCallback(conn,msg)
+				this.messageCallback(msg)
 			}
 		}()
 	}
