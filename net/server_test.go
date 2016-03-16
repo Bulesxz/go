@@ -1,10 +1,11 @@
 package net
 import (
 	"testing"
-	"fmt"
-	"reflect"
 )
 
 func Test_Encode(t *testing.T){
-	sev :=new(Server)
+	
+	serh:=&ServerHandler{}
+	ser :=serh.NewServer("127.0.0.1:9000")
+	ser.Start()
 }

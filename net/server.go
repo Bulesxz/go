@@ -3,21 +3,47 @@ package net
 import (
 	"fmt"
 	"github.com/funny/link"
-	"gosxz/codec"	
+	"github.com/Bulesxz/go/codec"	
 )
 
 
 
 type Server struct {
-	*link.Server
+	addr string
+	server *link.Server
 	messageCallback MessageCallback
 	connectCallback ConnectCallback
 	closeCallback   CloseCallback
 	start          int32
 }
 
-func (this *Server) Start(addr string)  {
-	srv, err := link.Serve("tcp", "addr", codec.GetJsonIoCodec())
+type ServerHandler struct{
+	
+}
+func (this *ServerHandler)NewServer(addr string) *Server {
+	return &Server{
+		addr:            addr,
+		messageCallback: this.OnMessage,
+		connectCallback: this.OnConnection,
+		closeCallback:   this.OnClose,
+	}
+}
+
+func (this *ServerHandler) OnMessage(msg []byte){
+	fmt.Println("OnMessage")
+}
+
+func (this *ServerHandler) OnConnection(sess *link.Session) *Connection{
+	fmt.Println("OnConnection",sess.Id())
+	return &Connection{sess}
+}
+func (this *ServerHandler) OnClose(){
+	fmt.Println("OnClose")
+}
+
+func (this *Server) Start()  {
+	srv, err := link.Serve("tcp", this.addr, codec.GetJsonIoCodec())
+	this.server=srv
 	if err != nil {
 		fmt.Println("link.Serve err|", err)
 		return 
@@ -29,17 +55,17 @@ func (this *Server) Start(addr string)  {
 			fmt.Println("srv.Accept err|", err)
 			return 
 		}
-		conn:= this.connectCallback(session) //此处考虑池化
 		go func(){
+			conn:= this.connectCallback(session) //此处考虑池化
 			for{
 				var msg []byte
-				err = conn.Session.Receive(msg)
+				err = conn.Receive(msg)
 				if err!=nil{
 					fmt.Println(" session.Receive err|", err)
 					this.closeCallback()
 					return 
 				}
-				this.messageCallback(msg)
+				go this.messageCallback(msg)
 			}
 		}()
 	}
