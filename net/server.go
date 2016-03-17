@@ -1,12 +1,27 @@
 package net
 
 import (
+	"github.com/funny/binary"
 	"fmt"
 	"github.com/funny/link"
-	"github.com/Bulesxz/go/codec"	
+	"github.com/Bulesxz/go/codec"
+	"github.com/Bulesxz/go/pake"
+	"reflect"
+	"encoding/json"
+)
+var (
+	ctx pake.ContextInfo
+	mes *pake.Messages
 )
 
-
+func init(){
+	
+	pake.Register(1,&pake.MessageLogin{})
+	ctx =pake.ContextInfo{}
+	ctx.SetSess(nil)
+	ctx.SetUserId(9999)
+	mes =&pake.Messages{ctx}
+}
 
 type Server struct {
 	addr string
@@ -26,11 +41,34 @@ func (this *ServerHandler)NewServer(addr string) *Server {
 		messageCallback: this.OnMessage,
 		connectCallback: this.OnConnection,
 		closeCallback:   this.OnClose,
+		start:1,
 	}
 }
 
 func (this *ServerHandler) OnMessage(msg []byte){
-	fmt.Println("OnMessage")
+	fmt.Println("OnMessage",msg)
+	r:=binary.NewBufferReader(msg[:8]);
+	_=r.ReadUint32LE()
+	pakeid := r.ReadUint32LE()
+	fmt.Println(pake.MessageMap,"pakeid",pakeid)
+	if msgI,ok:=pake.MessageMap[pake.PakeId(pakeid)];!ok {
+		fmt.Println("not find")
+		return 
+	}else{
+		
+		r := reflect.New(msgI.Type())
+		if msgI.Kind() == reflect.Ptr {
+			r.Elem().Set(reflect.New(msgI.Elem().Type()))
+		}
+		t:=r.Elem().Interface().(pake.MessageI)
+		p:=mes.Decode(msg)
+		//fmt.Println(reflect.TypeOf(p))
+		json.Unmarshal(p.GetBody(),t.GetReq())
+		fmt.Println(reflect.TypeOf(t))
+		
+		t.Process()
+	}
+	
 }
 
 func (this *ServerHandler) OnConnection(sess *link.Session) *Connection{
@@ -55,17 +93,19 @@ func (this *Server) Start()  {
 			fmt.Println("srv.Accept err|", err)
 			return 
 		}
+		fmt.Println("Accept")
 		go func(){
 			conn:= this.connectCallback(session) //此处考虑池化
 			for{
 				var msg []byte
-				err = conn.Receive(msg)
+				err = conn.Receive(&msg)
 				if err!=nil{
 					fmt.Println(" session.Receive err|", err)
 					this.closeCallback()
 					return 
 				}
-				go this.messageCallback(msg)
+				fmt.Println("Receive")
+				go  this.messageCallback(msg)
 			}
 		}()
 	}

@@ -1,5 +1,9 @@
 package codec
 
+import (
+	"fmt"
+)
+
 import(
 	"io"
 	"github.com/funny/link"
@@ -12,12 +16,12 @@ type JsonIo struct{
 func (this JsonIo) Read(r *binary.Reader) []byte{
 	b := r.ReadUint32LE()
 	if b == 0 || b > (65535) {
+		fmt.Println("ReadUint32LE",b)
 		return nil
 	}
 	buf := make([]byte, b+4+4)//包长度+id +body
 	binary.PutUint32LE(buf,b)
 	r.ReadFull(buf[4:])
-
 	return buf
 }
 func (this JsonIo) Write(w *binary.Writer,buf []byte){
@@ -37,10 +41,12 @@ type JsonCodecType struct {
 }
 
 func (this JsonCodecType) NewEncoder(w io.Writer) link.Encoder{
+	fmt.Println("NewEncoder")
 	return jsonEncoder{this.Spliter,binary.NewWriter(w)}
 }
 
 func (this JsonCodecType) NewDecoder(r io.Reader) link.Decoder{
+	fmt.Println("NewDecoder")
 	return jsonDecoder{this.Spliter,binary.NewReader(r)}
 }
 
@@ -49,6 +55,7 @@ type jsonEncoder struct {
 	Writer  *binary.Writer
 }
 func (this jsonEncoder) Encode(msg interface{}) error{
+	fmt.Println("Encode")
 	this.Writer.WritePacket(msg.([]byte),this.Spliter)
 	return this.Writer.Flush()
 }
@@ -59,7 +66,8 @@ type jsonDecoder struct {
 }
 
 func (this jsonDecoder) Decode(msg interface{}) error{
-	msg=this.Reader.ReadPacket(this.Spliter)
+	fmt.Println("Decode")
+	*(msg.(*[]byte))=this.Reader.ReadPacket(this.Spliter)
 	return this.Reader.Error()
 }
 
