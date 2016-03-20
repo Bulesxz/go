@@ -15,6 +15,7 @@ type JsonIo struct{
 
 func (this JsonIo) Read(r *binary.Reader) []byte{
 	b := r.ReadUint32LE()
+	fmt.Println("read.....",b)
 	if b == 0 || b > (65535) {
 		fmt.Println("ReadUint32LE",b)
 		return nil
@@ -55,7 +56,7 @@ type jsonEncoder struct {
 	Writer  *binary.Writer
 }
 func (this jsonEncoder) Encode(msg interface{}) error{
-	fmt.Println("Encode")
+	//fmt.Println("Encode")
 	this.Writer.WritePacket(msg.([]byte),this.Spliter)
 	return this.Writer.Flush()
 }
@@ -66,7 +67,7 @@ type jsonDecoder struct {
 }
 
 func (this jsonDecoder) Decode(msg interface{}) error{
-	fmt.Println("Decode")
+	//fmt.Println("Decode")
 	*(msg.(*[]byte))=this.Reader.ReadPacket(this.Spliter)
 	return this.Reader.Error()
 }

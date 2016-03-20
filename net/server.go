@@ -4,8 +4,8 @@ import (
 	"github.com/funny/binary"
 	"fmt"
 	"github.com/funny/link"
-	"github.com/Bulesxz/go/codec"
-	"github.com/Bulesxz/go/pake"
+	"github.com/go/codec"
+	"github.com/go/pake"
 	"reflect"
 	"encoding/json"
 )
@@ -14,14 +14,16 @@ var (
 	mes *pake.Messages
 )
 
+
 func init(){
-	
+	fmt.Println("init")
 	pake.Register(1,&pake.MessageLogin{})
 	ctx =pake.ContextInfo{}
 	ctx.SetSess(nil)
 	ctx.SetUserId(9999)
 	mes =&pake.Messages{ctx}
 }
+
 
 type Server struct {
 	addr string
@@ -45,8 +47,11 @@ func (this *ServerHandler)NewServer(addr string) *Server {
 	}
 }
 
-func (this *ServerHandler) OnMessage(msg []byte){
-	fmt.Println("OnMessage",msg)
+func (this *ServerHandler) OnMessage(conn *Connection,msg []byte){
+	//fmt.Println("OnMessage",msg)
+	if msg  == nil {
+		return 
+	}
 	r:=binary.NewBufferReader(msg[:8]);
 	_=r.ReadUint32LE()
 	pakeid := r.ReadUint32LE()
@@ -67,6 +72,11 @@ func (this *ServerHandler) OnMessage(msg []byte){
 		fmt.Println(reflect.TypeOf(t))
 		
 		t.Process()
+		
+		b,_:=json.Marshal(t.GetRsp())
+		buf:=mes.Encode(pake.PakeId(pakeid),b)
+		//fmt.Println(buf)
+		conn.Send(buf)
 	}
 	
 }
@@ -94,7 +104,7 @@ func (this *Server) Start()  {
 			return 
 		}
 		fmt.Println("Accept")
-		go func(){
+		go func(session *link.Session){
 			conn:= this.connectCallback(session) //此处考虑池化
 			for{
 				var msg []byte
@@ -104,10 +114,10 @@ func (this *Server) Start()  {
 					this.closeCallback()
 					return 
 				}
-				fmt.Println("Receive")
-				go  this.messageCallback(msg)
+				//fmt.Println("Receive")
+				go  this.messageCallback(conn,msg)
 			}
-		}()
+		}(session)
 	}
 }
 

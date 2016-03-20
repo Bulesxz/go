@@ -82,6 +82,9 @@ func (this *MessageLogin) Init(c *ContextInfo){
 }
 func (this *MessageLogin) Process() {
 	fmt.Println("process",this.GetReq())
+	this.Rsp.A=1
+	this.Rsp.B=1
+	this.Rsp.C="ssssssssss"
 }
 func (this *MessageLogin) GetReq() interface{}{
 	fmt.Println("GetReq")

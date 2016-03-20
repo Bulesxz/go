@@ -39,8 +39,7 @@ func NewTimingWheel(interval time.Duration, buckets int) *TimingWheel {
 	}
 	
 	w.ticker = time.NewTicker(interval)
-	go w.run()
-
+	
 	return w
 }
 
@@ -63,7 +62,7 @@ func (w *TimingWheel) Add(timeout time.Duration,callback func()) {
 
 }
 
-func (w *TimingWheel) run() {
+func (w *TimingWheel) Run() {
 	for {
 		select {
 		case <-w.ticker.C:

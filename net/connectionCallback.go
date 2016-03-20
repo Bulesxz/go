@@ -7,6 +7,6 @@ type Connection struct{
 	*link.Session
 }
 
-type MessageCallback func(msg []byte)
+type MessageCallback func(conn *Connection,msg []byte)
 type ConnectCallback func(sess *link.Session) *Connection
 type CloseCallback func()
