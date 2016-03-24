@@ -5,8 +5,8 @@ import (
 )
 import(
 	"github.com/funny/link"
-	"github.com/go/codec"
-	timewheel "github.com/go/time"
+	"github.com/Bulesxz/go/codec"
+	timewheel "github.com/Bulesxz/go/time"
 	"time"
 )
 
@@ -16,7 +16,7 @@ var (
 )
 
 func init(){
-	GloablTimingWheel = timewheel.NewTimingWheel(time.Second*1, 10)
+	GloablTimingWheel = timewheel.NewTimingWheel(time.Second*1, 20)
 	//
 }
 
@@ -27,6 +27,7 @@ type Client struct{
 	addr     string
 	context  interface{}
 	recvBuf chan []byte
+	errChan chan error
 }
 
 func NewClient(protocol,addr string) *Client{
@@ -40,38 +41,82 @@ func (this *Client) ConnetcTimeOut(timeout time.Duration) error{
 	}
 	this.Session=session
 	this.recvBuf = make(chan []byte, 1)
-	go func(session *link.Session,recvBuf  chan<-  []byte){
+	this.errChan = make(chan error, 1)
+	go func(session *link.Session,recvBuf  chan<-  []byte,errChan chan<- error){
 		for{
+			//fmt.Println("recvBuf。。。",recvBuf)
 			var receiveBuf []byte
 			err = this.Receive(&receiveBuf)
 			if err!=nil {
 				fmt.Println("this.Receive err|",err)
+				errChan<-err
 				session.Close()
 				break
 			}
+			errChan<-nil
 			recvBuf<-receiveBuf
-			fmt.Println("receive:",receiveBuf)
+			//fmt.Println("recvBuf。。。",recvBuf)
+			//fmt.Println("receive:",receiveBuf)
 		}
-	}(session,this.recvBuf)
+	}(session,this.recvBuf,this.errChan)
 	return err
 }
 
+/*
 func (this *Client) timeout(){
 	fmt.Println("client timeout")
-	this.Close()
-}
+	
+	//this.Close()//有问题，这样只要到了timeout时间，连接都会被关掉
+	select {
+		case <-this.errChan : //正常关闭
+			return
+		default://超时 干掉连接
+			close(this.recvBuf)
+			this.Close()
+	}
+	
+}*/
 func (this *Client) SendTimeOut(timeout time.Duration,msg interface{}) ( []byte,error){
-	GloablTimingWheel.Add(timeout,this.timeout)
+	recvBuf := this.recvBuf
+	errChan := this.errChan
+	
+	var closeChan chan bool
+	closeChan = make(chan bool, 1)
+	GloablTimingWheel.Add(timeout,func(){
+		fmt.Println("client timeout")
+		select {
+		case <-closeChan : //正常关闭
+			return
+		default://超时 干掉连接
+			close(this.recvBuf)
+			this.Close()
+		}
+	})
+	
 	err:=this.Send(msg)
 	if err!=nil{
 		fmt.Println("this.Send err|",err)
-		close(this.recvBuf)
+		closeChan<-true //关掉timeout
 		return nil, err
 	}
-	var receiveBuf []byte
-	receiveBuf <- this.recvBuf
 	
-	close(this.recvBuf)
+	err = <-errChan
+	if err != nil {
+		closeChan<-true //关掉timeout
+		return nil, err
+	}
+	
+	
+	var receiveBuf []byte
+	//fmt.Println("recvBuf+++",recvBuf)
+	
+	ok := false
+	receiveBuf ,ok= <-recvBuf//阻塞等待 ，直到超时
+	if !ok { //关闭
+		fmt.Println("!ok 关闭 this.recvBuf")
+	}
+	closeChan<-true //关掉timeout
+	//fmt.Println("recvBuf+++",recvBuf)
 	return receiveBuf,err
 }
 

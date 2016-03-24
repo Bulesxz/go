@@ -1,7 +1,7 @@
 package main
 import (
 	"fmt"
-	"github.com/go/net"
+	"github.com/Bulesxz/go/net"
 )
 
 

@@ -4,8 +4,8 @@ import (
 	"github.com/funny/binary"
 	"fmt"
 	"github.com/funny/link"
-	"github.com/go/codec"
-	"github.com/go/pake"
+	"github.com/Bulesxz/go/codec"
+	"github.com/Bulesxz/go/pake"
 	"reflect"
 	"encoding/json"
 )
