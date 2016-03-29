@@ -24,7 +24,11 @@ func init(){
 	mes =&pake.Messages{ctx}
 }
 
-
+type Task struct{
+	messageCallback MessageCallback
+	conn *Connection
+	msg []byte
+}
 type Server struct {
 	addr string
 	server *link.Server
@@ -32,6 +36,7 @@ type Server struct {
 	connectCallback ConnectCallback
 	closeCallback   CloseCallback
 	start          int32
+	tasks chan *Task
 }
 
 type ServerHandler struct{
@@ -44,6 +49,7 @@ func (this *ServerHandler)NewServer(addr string) *Server {
 		connectCallback: this.OnConnection,
 		closeCallback:   this.OnClose,
 		start:1,
+		tasks: make(chan *Task,1024),///改进
 	}
 }
 
@@ -96,7 +102,9 @@ func (this *Server) Start()  {
 		fmt.Println("link.Serve err|", err)
 		return 
 	}
-
+	
+	go this.Dotask()
+	
 	for this.start==1{
 		session, err := srv.Accept()
 		if err != nil {
@@ -115,7 +123,9 @@ func (this *Server) Start()  {
 					return 
 				}
 				//fmt.Println("Receive")
-				go  this.messageCallback(conn,msg)
+				//go  this.messageCallback(conn,msg)
+				this.tasks <- &Task{this.messageCallback,conn,msg}
+		//		fmt.Println("Receive")
 			}
 		}(session)
 	}
@@ -123,4 +133,11 @@ func (this *Server) Start()  {
 
 func (this *Server) stop(){
 	this.start=0;
+}
+
+func (this *Server) Dotask(){
+	for {
+		task := <- this.tasks
+    	task.messageCallback(task.conn,task.msg)
+	}
 }

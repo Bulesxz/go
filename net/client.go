@@ -16,7 +16,7 @@ var (
 )
 
 func init(){
-	GloablTimingWheel = timewheel.NewTimingWheel(time.Second*1, 20)
+	GloablTimingWheel = timewheel.NewTimingWheel(time.Millisecond*100, 50)
 	//
 }
 
@@ -83,11 +83,13 @@ func (this *Client) SendTimeOut(timeout time.Duration,msg interface{}) ( []byte,
 	var closeChan chan bool
 	closeChan = make(chan bool, 1)
 	GloablTimingWheel.Add(timeout,func(){
-		fmt.Println("client timeout")
 		select {
 		case <-closeChan : //正常关闭
+			fmt.Println("closeChan")
 			return
 		default://超时 干掉连接
+			fmt.Println("timeout")
+			this.errChan<-nil
 			close(this.recvBuf)
 			this.Close()
 		}
@@ -101,12 +103,10 @@ func (this *Client) SendTimeOut(timeout time.Duration,msg interface{}) ( []byte,
 	}
 	
 	err = <-errChan
-	if err != nil {
-		closeChan<-true //关掉timeout
-		return nil, err
+	if err!=nil{
+		close(closeChan)
+		return nil ,err
 	}
-	
-	
 	var receiveBuf []byte
 	//fmt.Println("recvBuf+++",recvBuf)
 	

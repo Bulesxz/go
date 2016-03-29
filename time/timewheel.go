@@ -49,14 +49,18 @@ func (w *TimingWheel) Stop() {
 
 func (w *TimingWheel) Add(timeout time.Duration,callback func()) {
 	if timeout >=  w.interval * time.Duration(w.buckets) {
+		//fmt.Println(timeout,w.interval*time.Duration(w.buckets) )
 		panic("timeout too much, over maxtimeout")
 	}
 
 	w.Lock()
 
 	index := (w.pos + int(timeout/w.interval)) % w.buckets
+	
+	//fmt.Println("++++",index)
+	
 	w.tasks[index].PushBack(callback)
-	//fmt.Println("++++",index,w.tasks[index])
+	
 	
 	w.Unlock()
 
@@ -81,7 +85,7 @@ func (w *TimingWheel) onTicker() {
 	//fmt.Println("pos=",w.pos,w.tasks[w.pos],w.tasks[w.pos].Front())
 	
 	task := w.tasks[w.pos]
-	w.tasks[w.pos]=nil
+	w.tasks[w.pos]=list.New()
 	w.pos = (w.pos + 1) % w.buckets
 	w.Unlock()
 	
