@@ -16,7 +16,7 @@ var (
 
 
 func init(){
-	fmt.Println("init")
+	//fmt.Println("init")
 	pake.Register(1,&pake.MessageLogin{})
 	ctx =pake.ContextInfo{}
 	ctx.SetSess(nil)
@@ -61,7 +61,7 @@ func (this *ServerHandler) OnMessage(conn *Connection,msg []byte){
 	r:=binary.NewBufferReader(msg[:8]);
 	_=r.ReadUint32LE()
 	pakeid := r.ReadUint32LE()
-	fmt.Println(pake.MessageMap,"pakeid",pakeid)
+	//fmt.Println(pake.MessageMap,"pakeid",pakeid)
 	if msgI,ok:=pake.MessageMap[pake.PakeId(pakeid)];!ok {
 		fmt.Println("not find")
 		return 
@@ -75,7 +75,7 @@ func (this *ServerHandler) OnMessage(conn *Connection,msg []byte){
 		p:=mes.Decode(msg)
 		//fmt.Println(reflect.TypeOf(p))
 		json.Unmarshal(p.GetBody(),t.GetReq())
-		fmt.Println(reflect.TypeOf(t))
+		//fmt.Println(reflect.TypeOf(t))
 		
 		t.Process()
 		
@@ -88,11 +88,11 @@ func (this *ServerHandler) OnMessage(conn *Connection,msg []byte){
 }
 
 func (this *ServerHandler) OnConnection(sess *link.Session) *Connection{
-	fmt.Println("OnConnection",sess.Id())
+	//fmt.Println("OnConnection",sess.Id())
 	return &Connection{sess}
 }
 func (this *ServerHandler) OnClose(){
-	fmt.Println("OnClose")
+	//fmt.Println("OnClose")
 }
 
 func (this *Server) Start()  {
@@ -111,7 +111,7 @@ func (this *Server) Start()  {
 			fmt.Println("srv.Accept err|", err)
 			return 
 		}
-		fmt.Println("Accept")
+		//fmt.Println("Accept")
 		go func(session *link.Session){
 			conn:= this.connectCallback(session) //此处考虑池化
 			for{
@@ -123,8 +123,8 @@ func (this *Server) Start()  {
 					return 
 				}
 				//fmt.Println("Receive")
-				//go  this.messageCallback(conn,msg)
-				this.tasks <- &Task{this.messageCallback,conn,msg}
+				go  this.messageCallback(conn,msg)
+				//this.tasks <- &Task{this.messageCallback,conn,msg}
 		//		fmt.Println("Receive")
 			}
 		}(session)

@@ -85,7 +85,7 @@ func (this *Client) SendTimeOut(timeout time.Duration,msg interface{}) ( []byte,
 	GloablTimingWheel.Add(timeout,func(){
 		select {
 		case <-closeChan : //正常关闭
-			fmt.Println("closeChan")
+			//fmt.Println("closeChan")
 			return
 		default://超时 干掉连接
 			fmt.Println("timeout")

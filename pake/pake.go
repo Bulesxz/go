@@ -78,20 +78,20 @@ type MessageLogin struct{
 }
 
 func (this *MessageLogin) Init(c *ContextInfo){
-	fmt.Println("init")
+	//fmt.Println("init")
 }
 func (this *MessageLogin) Process() {
-	fmt.Println("process",this.GetReq())
+	//fmt.Println("process",this.GetReq())
 	this.Rsp.A=1
 	this.Rsp.B=1
 	this.Rsp.C="ssssssssss"
 }
 func (this *MessageLogin) GetReq() interface{}{
-	fmt.Println("GetReq")
+	//fmt.Println("GetReq")
 	return &this.Req
 }
 func (this *MessageLogin) GetRsp () interface{}{
-	fmt.Println("GetRsp")
+	//fmt.Println("GetRsp")
 	return &this.Rsp
 }
 
