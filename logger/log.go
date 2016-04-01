@@ -3,11 +3,11 @@ package logger
 type LOG_LEVEL int
 
 var LOG_STR = []string{
-	"LOG_FATAL","LOG_ERROR","WARNING","LOG_INFO","LOG_DEBUG",
+	"LOG_FATAL","LOG_ERROR","LOG_WARNING","LOG_INFO","LOG_DEBUG",
 }
 const (
-    FATAL LOG_LEVEL= iota
-    ERROR
+    FATAL LOG_LEVEL= iota //0
+    ERROR //1
     WARNING
     INFO
     DEBUG

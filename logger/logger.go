@@ -15,6 +15,7 @@ type Logger struct{
 	file *os.File
 	logdir string
 	filename string
+	level LOG_LEVEL
 }
 func (this *Logger) Init(){
 	fmt.Println("init")
@@ -31,6 +32,13 @@ func (this *Logger) Init(){
 		os.Exit(1)
 	}
 	this.max_size=int64(v)
+	
+	v, e = ini.GetIntValWithDefault("log","level",2)
+	if e != nil{
+		fmt.Println("Logger Init GetIntValWithDefault level e|",e)
+		os.Exit(1)
+	}
+	this.level=LOG_LEVEL(v)
 
 	this.logdir = ini.GetStringValWithDefault("log","logdir","log")
 	
@@ -41,15 +49,25 @@ func (this *Logger) Init(){
 	go this.logWrite()
 }
 
+func (this *Logger) checkLevel(level LOG_LEVEL) bool{
+	if level <=this.level {
+		return true
+	}else { 
+		return false
+	}
+}
 func (this *Logger) LOG_DEVEL_FORMAT(level LOG_LEVEL)[]byte{
 	now := time.Now()
 	year,month,day :=now.Date()
 	hour,min,sec :=now.Clock()
+	
 	_,file,line,_:= runtime.Caller(0)
-	return []byte(fmt.Sprintf("%4d-%02d-%02d:%02d:%02d%d[%s]%s:%d |",year,month,day,hour,min,sec,LOG_STR[level],file,line))
+	return []byte(fmt.Sprintf("%4d-%02d-%02d:%02d:%02d%02d[%s]%s:%d |",year,month,day,hour,min,sec,LOG_STR[level],file,line))
 }
 func (this *Logger) LOG_FATAL(format string, params ...interface{}){
-	
+	if this.checkLevel(FATAL)==false{
+		return
+	}
 	timestr:=this.LOG_DEVEL_FORMAT(FATAL)
 	context:=fmt.Sprintf(format,params...)
 	var logstr []byte
@@ -59,8 +77,45 @@ func (this *Logger) LOG_FATAL(format string, params ...interface{}){
 }
 
 func (this *Logger) LOG_DEBUG(format string, params ...interface{}){
-	
+	if this.checkLevel(DEBUG)==false{
+		return
+	}
 	timestr:=this.LOG_DEVEL_FORMAT(DEBUG)
+	context:=fmt.Sprintf(format,params...)
+	var logstr []byte
+	logstr=append(logstr,timestr...)
+	logstr=append(logstr,[]byte(context)...)
+	this.Output(logstr)
+}
+func (this *Logger) LOG_ERROR(format string, params ...interface{}){
+	if this.checkLevel(ERROR)==false{
+		return
+	}
+	timestr:=this.LOG_DEVEL_FORMAT(ERROR)
+	context:=fmt.Sprintf(format,params...)
+	var logstr []byte
+	logstr=append(logstr,timestr...)
+	logstr=append(logstr,[]byte(context)...)
+	this.Output(logstr)
+}
+
+func (this *Logger) LOG_WARNING(format string, params ...interface{}){
+	if this.checkLevel(WARNING)==false{
+		return
+	}
+	timestr:=this.LOG_DEVEL_FORMAT(WARNING)
+	context:=fmt.Sprintf(format,params...)
+	var logstr []byte
+	logstr=append(logstr,timestr...)
+	logstr=append(logstr,[]byte(context)...)
+	this.Output(logstr)
+}
+
+func (this *Logger) LOG_INFO(format string, params ...interface{}){
+	if this.checkLevel(INFO)==false{
+		return
+	}
+	timestr:=this.LOG_DEVEL_FORMAT(INFO)
 	context:=fmt.Sprintf(format,params...)
 	var logstr []byte
 	logstr=append(logstr,timestr...)
@@ -88,6 +143,7 @@ func (this *Logger) openFile(){
 }
 
 func (this *Logger) rename(){
+	//fmt.Println("rename-------------")
 	now := time.Now()
 	year,month,day :=now.Date()
 	hour,min,sec :=now.Clock()
@@ -99,7 +155,6 @@ func (this *Logger) rename(){
 		fmt.Println("Logger rename err|",err)
 		os.Exit(1)
 	}
-	fmt.Println("rename")
 	//
 }
 func (this *Logger)changefile(){
