@@ -4,7 +4,7 @@ import (
 	"sync"
 	"time"
 	"container/list"
-	"fmt"
+	log "github.com/Bulesxz/go/logger"
 )
 
 type TimingWheel struct {
@@ -108,7 +108,7 @@ func doTask(l *list.List){
 
 
 func timeOut(){
-	fmt.Println("timeOut")
+	log.Info("timeOut")
 }
 /*
 func main() {

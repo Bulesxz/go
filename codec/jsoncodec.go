@@ -1,13 +1,10 @@
 package codec
 
-import (
-	"fmt"
-)
-
 import(
 	"io"
 	"github.com/funny/link"
 	"github.com/funny/binary"
+	log "github.com/Bulesxz/go/logger"
 )
 
 type JsonIo struct{
@@ -17,7 +14,7 @@ func (this JsonIo) Read(r *binary.Reader) []byte{
 	b := r.ReadUint32LE()
 	//fmt.Println("read.....",b)
 	if b == 0 || b > (65535) {
-		fmt.Println("ReadUint32LE",b)
+		log.Debug("ReadUint32LE ",b)
 		return nil
 	}
 	buf := make([]byte, b+4+4)//包长度+id +body

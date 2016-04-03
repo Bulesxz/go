@@ -13,7 +13,8 @@ const (
     DEBUG
 )
 
+/*
 type LoggerInterface interface{
 	LOG_FATAL(format string, params ...interface{})
 	LOG_DEBUG(format string, params ...interface{})
-}
+}*/

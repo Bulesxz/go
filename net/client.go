@@ -1,12 +1,10 @@
 package net
 
-import (
-	"fmt"
-)
 import(
 	"github.com/funny/link"
 	"github.com/Bulesxz/go/codec"
 	timewheel "github.com/Bulesxz/go/time"
+	log "github.com/Bulesxz/go/logger"
 	"time"
 )
 
@@ -36,7 +34,7 @@ func NewClient(protocol,addr string) *Client{
 func (this *Client) ConnetcTimeOut(timeout time.Duration) error{
 	session,err := link.ConnectTimeout(this.protocol,this.addr,timeout,codec.GetJsonIoCodec())
 	if err!=nil {
-		fmt.Println("link.ConnectTimeout err|",err)
+		log.Error("link.ConnectTimeout err|",err)
 		return err
 	}
 	this.Session=session
@@ -48,7 +46,7 @@ func (this *Client) ConnetcTimeOut(timeout time.Duration) error{
 			var receiveBuf []byte
 			err = this.Receive(&receiveBuf)
 			if err!=nil {
-				fmt.Println("this.Receive err|",err)
+				log.Error("this.Receive err|",err)
 				errChan<-err
 				session.Close()
 				break
@@ -88,7 +86,7 @@ func (this *Client) SendTimeOut(timeout time.Duration,msg interface{}) ( []byte,
 			//fmt.Println("closeChan")
 			return
 		default://超时 干掉连接
-			fmt.Println("timeout")
+			log.Info("timeout")
 			this.errChan<-nil
 			close(this.recvBuf)
 			this.Close()
@@ -97,7 +95,7 @@ func (this *Client) SendTimeOut(timeout time.Duration,msg interface{}) ( []byte,
 	
 	err:=this.Send(msg)
 	if err!=nil{
-		fmt.Println("this.Send err|",err)
+		log.Error("this.Send err|",err)
 		closeChan<-true //关掉timeout
 		return nil, err
 	}
@@ -113,7 +111,7 @@ func (this *Client) SendTimeOut(timeout time.Duration,msg interface{}) ( []byte,
 	ok := false
 	receiveBuf ,ok= <-recvBuf//阻塞等待 ，直到超时
 	if !ok { //关闭
-		fmt.Println("!ok 关闭 this.recvBuf")
+		log.Info("!ok 关闭 this.recvBuf")
 	}
 	closeChan<-true //关掉timeout
 	//fmt.Println("recvBuf+++",recvBuf)

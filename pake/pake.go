@@ -5,9 +5,9 @@ import (
 	"github.com/funny/binary"
 	"github.com/funny/link"
 	"bytes"
-	"fmt"
 	"sync/atomic"
 	"reflect"
+	log "github.com/Bulesxz/go/logger"
 )
 
 var (
@@ -120,14 +120,14 @@ func (this *Messages) unmarshal(msg []byte) *Pake{
 	pake:=new(Pake)
 	n,err:=buffer.Read(buff)
 	if err!=nil || n != 4 {
-		fmt.Println("len not equal 4 err|",err)
+		log.Error("len not equal 4 err|",err)
 		return nil
 	}
 	pake.pakeLen=binary.GetUint32LE(buff)
 	
 	n,err=buffer.Read(buff)
 	if err!=nil || n !=4 {
-		fmt.Println("len not equal err|",err)
+		log.Error("len not equal err|",err)
 		return nil
 	}
 	pake.id=PakeId(binary.GetUint32LE(buff))

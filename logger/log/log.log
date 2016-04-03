@@ -1,5 +1,2 @@
-2016-04-01:16:1834[LOG_FATAL]G:/gopath/src/github.com/Bulesxz/go/logger/logger.go:64 |0
-2016-04-01:16:1834[LOG_ERROR]G:/gopath/src/github.com/Bulesxz/go/logger/logger.go:64 |ssss1 2
-2016-04-01:16:1902[LOG_FATAL]G:/gopath/src/github.com/Bulesxz/go/logger/logger.go:64 |0
-2016-04-01:16:1902[LOG_ERROR]G:/gopath/src/github.com/Bulesxz/go/logger/logger.go:64 |ssss1 2
-2016-04-01:16:1902[WARNING]G:/gopath/src/github.com/Bulesxz/go/logger/logger.go:64 |ssss1 2
+2016-04-03:12:1155[LOG_ERROR]G:/gopath/src/github.com/Bulesxz/go/logger/logger_test.go:27 |ssss|1 2
+2016-04-03:12:4051[LOG_ERROR]G:/gopath/src/github.com/Bulesxz/go/logger/logger_test.go:27 |ssss|1 2

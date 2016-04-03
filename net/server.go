@@ -2,12 +2,12 @@ package net
 
 import (
 	"github.com/funny/binary"
-	"fmt"
 	"github.com/funny/link"
 	"github.com/Bulesxz/go/codec"
 	"github.com/Bulesxz/go/pake"
 	"reflect"
 	"encoding/json"
+	log "github.com/Bulesxz/go/logger"
 )
 var (
 	ctx pake.ContextInfo
@@ -55,6 +55,7 @@ func (this *ServerHandler)NewServer(addr string) *Server {
 
 func (this *ServerHandler) OnMessage(conn *Connection,msg []byte){
 	//fmt.Println("OnMessage",msg)
+	log.Debug("OnMessage:",msg)
 	if msg  == nil {
 		return 
 	}
@@ -63,7 +64,7 @@ func (this *ServerHandler) OnMessage(conn *Connection,msg []byte){
 	pakeid := r.ReadUint32LE()
 	//fmt.Println(pake.MessageMap,"pakeid",pakeid)
 	if msgI,ok:=pake.MessageMap[pake.PakeId(pakeid)];!ok {
-		fmt.Println("not find")
+		log.Error("not find")
 		return 
 	}else{
 		
@@ -88,18 +89,18 @@ func (this *ServerHandler) OnMessage(conn *Connection,msg []byte){
 }
 
 func (this *ServerHandler) OnConnection(sess *link.Session) *Connection{
-	//fmt.Println("OnConnection",sess.Id())
+	log.Debug("OnConnection",sess.Id())
 	return &Connection{sess}
 }
 func (this *ServerHandler) OnClose(){
-	//fmt.Println("OnClose")
+	log.Debug("OnClose")
 }
 
 func (this *Server) Start()  {
 	srv, err := link.Serve("tcp", this.addr, codec.GetJsonIoCodec())
 	this.server=srv
 	if err != nil {
-		fmt.Println("link.Serve err|", err)
+		log.Error("link.Serve err|", err)
 		return 
 	}
 	
@@ -108,7 +109,7 @@ func (this *Server) Start()  {
 	for this.start==1{
 		session, err := srv.Accept()
 		if err != nil {
-			fmt.Println("srv.Accept err|", err)
+			log.Error("srv.Accept err|", err)
 			return 
 		}
 		//fmt.Println("Accept")
@@ -118,11 +119,12 @@ func (this *Server) Start()  {
 				var msg []byte
 				err = conn.Receive(&msg)
 				if err!=nil{
-					fmt.Println(" session.Receive err|", err)
+					//log.Error(" session.Receive err|", err)
 					this.closeCallback()
 					return 
 				}
 				//fmt.Println("Receive")
+				
 				go  this.messageCallback(conn,msg)
 				//this.tasks <- &Task{this.messageCallback,conn,msg}
 		//		fmt.Println("Receive")
