@@ -1,13 +1,13 @@
 // pakeage
 package pake
 import (
-//	"encoding/json"
+	"fmt"
+	"encoding/json"
 	"github.com/funny/binary"
-	"github.com/funny/link"
 	"bytes"
-	"sync/atomic"
 	"reflect"
 	log "github.com/Bulesxz/go/logger"
+	bin "encoding/binary"
 )
 
 var (
@@ -17,37 +17,40 @@ type  PakeId uint32
 
 type Pake struct{
 	pakeLen uint32
-	id	PakeId 
+	sessionLen uint32
+	session ContextInfo
 	pakeBody []byte
 }
 
-func (this *Pake) GetId()PakeId{
-	return this.id	
-}
 func (this *Pake) GetBody() []byte{
 	return this.pakeBody
 }
 func (this *Pake) GetLen() uint32{
 	return this.pakeLen
 }
+func (this *Pake) GetSession() *ContextInfo{
+	return &this.session
+}
 
 type ContextInfo struct{
-	sess *link.Session
-	seq uint64
-	userId	uint64
-}
-func (this *ContextInfo) SetSess(sess *link.Session){
-	this.sess=sess
-}
-func (this *ContextInfo) SetUserId(userId uint64){
-	this.userId=userId
+	Id	PakeId `json:"Id"`
+	Seq uint64 `json:"Seq"`
+	UserId	string `json:"UserId"`
+	Sess	string `json:"Sess"`
 }
 
-
+func (this *ContextInfo) SetUserId(userId string){
+	this.UserId=userId
+}
+func (this *ContextInfo) SetSeq(seq uint64){
+	this.Seq = seq
+}
+func (this *ContextInfo) SetSess(sess string){
+	this.Sess=sess
+}
 type Messages struct{
 	Context ContextInfo
 }
-
 
 type MessageI interface{
 	Init(*ContextInfo)
@@ -55,60 +58,36 @@ type MessageI interface{
 	GetReq() interface{}
 	GetRsp() interface{}
 }
- 
+
+
 //PakeId 1
 
 
 
-type LoginReq struct{
-	A int32	`json:"a"`
-	B int32	`json:"b"`
-	C string `json:"c"`
-}
-
-type LoginRsp struct{
-	A int32	`json:"a"`
-	B int32	`json:"b"`
-	C string `json:"c"`
-}
-
-type MessageLogin struct{
-	Req LoginReq
-	Rsp LoginRsp
-}
-
-func (this *MessageLogin) Init(c *ContextInfo){
-	//fmt.Println("init")
-}
-func (this *MessageLogin) Process() {
-	//fmt.Println("process",this.GetReq())
-	this.Rsp.A=1
-	this.Rsp.B=1
-	this.Rsp.C="ssssssssss"
-}
-func (this *MessageLogin) GetReq() interface{}{
-	//fmt.Println("GetReq")
-	return &this.Req
-}
-func (this *MessageLogin) GetRsp () interface{}{
-	//fmt.Println("GetRsp")
-	return &this.Rsp
-}
-
- 
-
 func (this *Messages) marshal(pake *Pake) []byte{
-	atomic.AddUint64(&(this.Context.seq),1)
+	//atomic.AddUint64(&(this.Context.seq),1)
 	var buff []byte=make([]byte,4)
 	var buffer bytes.Buffer
 	
+	//pakeLen
 	binary.PutUint32LE(buff,pake.pakeLen)
 	buffer.Write(buff)
 	
-	binary.PutUint32LE(buff,uint32(pake.id))
+	//sessionLen
+	binary.PutUint32LE(buff,pake.sessionLen)
 	buffer.Write(buff)
 	
+	//session
+	session_buff,err:= json.Marshal(&pake.session)
+	if err!=nil{
+		log.Error("json.Marshal err",err)
+	}
+	buffer.Write(session_buff)
+	
+	//pakeBody
 	buffer.Write(pake.pakeBody)
+	
+	fmt.Println("marshal",pake.session,"session_buff",session_buff,"len",len(session_buff),"body",pake.pakeBody)
 	
 	return buffer.Bytes()
 }
@@ -116,33 +95,59 @@ func (this *Messages) marshal(pake *Pake) []byte{
 func (this *Messages) unmarshal(msg []byte) *Pake{
 	
 	buffer:=bytes.NewBuffer(msg)
+	
 	var buff []byte=make([]byte,4)
 	pake:=new(Pake)
+	
+	//pakeLen
 	n,err:=buffer.Read(buff)
 	if err!=nil || n != 4 {
 		log.Error("len not equal 4 err|",err)
 		return nil
 	}
 	pake.pakeLen=binary.GetUint32LE(buff)
+	fmt.Println("pake.pakeLen",pake.pakeLen)
 	
+	//sessionLen
 	n,err=buffer.Read(buff)
 	if err!=nil || n !=4 {
 		log.Error("len not equal err|",err)
 		return nil
 	}
-	pake.id=PakeId(binary.GetUint32LE(buff))
+	pake.sessionLen=binary.GetUint32LE(buff)
+	fmt.Println("pake.sessionLen",pake.sessionLen)
+	
+	//session
+	var session_buff []byte=make([]byte,pake.sessionLen)
+	buffer.Read(session_buff)
+	fmt.Println("session_buff",session_buff,"\n")
+	err =json.Unmarshal(session_buff,&pake.session)
+	if err!=nil{
+		log.Error("json.Unmarshal",err)
+	}
+	fmt.Println("pake.session",pake.session)
+	
+	//pakeBody
 	pake.pakeBody=buffer.Bytes()
+	
 	return pake
 }
 
-func (this *Messages) Encode(id PakeId,msg []byte) []byte{
+func (this *Messages) Encode(msg []byte)([]byte){
 	if msg == nil {
 		return nil
 	}
 	pake:=Pake{}
-	pake.id=id
+	pake.session=this.Context
+	//pake.sessionLen= uint32(unsafe.Sizeof(this.Context)) 
+	
+	pake.sessionLen= 1 //bin.Size(pake.session)
+	fmt.Println("len",bin.Size(pake.session))
+	return nil
+	
 	pake.pakeBody=msg
-	pake.pakeLen=uint32(len(msg))
+	pake.pakeLen=uint32(len(msg)) + 4 + pake.sessionLen 
+	fmt.Println("encode",pake.pakeLen,pake.sessionLen,pake.session,pake.pakeBody)
 	return this.marshal(&pake)
 }
 
@@ -154,6 +159,10 @@ func (this *Messages) Decode(msg []byte) *Pake{
 	return pake
 }
 
+func (this *Messages) Init(sess string){
+	this.Context.SetSess(sess)
+	this.Context.SetUserId("sxz")
+}
 
 
 func Register(id PakeId,msqI MessageI){

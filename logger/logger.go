@@ -188,7 +188,7 @@ func (this *Logger) logWrite() {
 
 
 var glog Logger
-func init(){
+func Init(){
 	glog.init()	
 }
 
