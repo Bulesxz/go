@@ -1,17 +1,17 @@
 package main
+
 import (
 	"fmt"
-	"github.com/Bulesxz/go/net"
 	log "github.com/Bulesxz/go/logger"
+	"github.com/Bulesxz/go/net"
 )
 
-
-
-
-func main(){
+func main() {
 	fmt.Println("main")
-	log.Init()
-	serh:=&net.ServerHandler{}
-	ser :=serh.NewServer("127.0.0.1:9000")
+	//log.Init()
+	log.Info("-------")
+	serh := &net.ServerHandler{}
+	log.Info("serh.NewServer")
+	ser := serh.NewServer("127.0.0.1:9000")
 	ser.Start()
 }

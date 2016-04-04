@@ -1,167 +1,168 @@
 package logger
 
 import (
+	"fmt"
+	"github.com/udoyu/utils/simini"
 	"os"
 	"runtime"
 	"time"
-	"fmt"
-	"github.com/udoyu/utils/simini"
 )
 
-type Logger struct{
-	buf chan string
+type Logger struct {
+	buf      chan string
 	max_size int64
-	size int64
-	file *os.File
-	logdir string
+	size     int64
+	file     *os.File
+	logdir   string
 	filename string
-	level LOG_LEVEL
+	level    LOG_LEVEL
 }
-func (this *Logger) init(){
-	fmt.Println("init")
-	
-	var ini simini.SimIni 
-	err :=ini.LoadFile("conf.ini")
-	if err!=0{
-		fmt.Println("Logger Init LoadFile err|",err)
-		os.Exit(1)
-	}
-	v, e := ini.GetIntValWithDefault("log","max_size",50*1024*1024/*50M*/)
-	if e != nil{
-		fmt.Println("Logger Init max_size GetIntValWithDefault e|",e)
-		os.Exit(1)
-	}
-	this.max_size=int64(v)
-	
-	v, e = ini.GetIntValWithDefault("log","level",2)
-	if e != nil{
-		fmt.Println("Logger Init level GetIntValWithDefault level e|",e)
-		os.Exit(1)
-	}
-	this.level=LOG_LEVEL(v)
 
-	this.logdir = ini.GetStringValWithDefault("log","logdir","log")
-	
-	this.filename=fmt.Sprintf("%s/log.log",this.logdir)
+func (this *Logger) Init() {
+	fmt.Println("Logger init")
+
+	var ini simini.SimIni
+	err := ini.LoadFile("conf.ini")
+	if err != 0 {
+		fmt.Println("Logger Init LoadFile err|", err)
+		os.Exit(1)
+	}
+	v, e := ini.GetIntValWithDefault("log", "max_size", 50*1024*1024 /*50M*/)
+	if e != nil {
+		fmt.Println("Logger Init max_size GetIntValWithDefault e|", e)
+		os.Exit(1)
+	}
+	this.max_size = int64(v)
+
+	v, e = ini.GetIntValWithDefault("log", "level", 2)
+	if e != nil {
+		fmt.Println("Logger Init level GetIntValWithDefault level e|", e)
+		os.Exit(1)
+	}
+	this.level = LOG_LEVEL(v)
+
+	this.logdir = ini.GetStringValWithDefault("log", "logdir", "log")
+
+	this.filename = fmt.Sprintf("%s/log.log", this.logdir)
 	this.openFile()
-	this.buf = make(chan string,10240)
-	fmt.Println(this)
+	this.buf = make(chan string, 1024)
+
 	go this.logWrite()
+	//fmt.Println("Logger:", this)
 }
 
-func (this *Logger) checkLevel(level LOG_LEVEL) bool{
-	if level <=this.level {
+func (this *Logger) checkLevel(level LOG_LEVEL) bool {
+	if level <= this.level {
 		return true
-	}else { 
+	} else {
 		return false
 	}
 }
-func (this *Logger) LOG_DEVEL_FORMAT(level LOG_LEVEL)[]byte{
+func (this *Logger) LOG_DEVEL_FORMAT(level LOG_LEVEL) []byte {
 	now := time.Now()
-	year,month,day :=now.Date()
-	hour,min,sec :=now.Clock()
-	
-	_,file,line,_:= runtime.Caller(3)
-	return []byte(fmt.Sprintf("%4d-%02d-%02d:%02d:%02d%02d[%s]%s:%d |",year,month,day,hour,min,sec,LOG_STR[level],file,line))
+	year, month, day := now.Date()
+	hour, min, sec := now.Clock()
+
+	_, file, line, _ := runtime.Caller(3)
+	return []byte(fmt.Sprintf("%4d-%02d-%02d:%02d:%02d:%02d[%s]%s:%d |", year, month, day, hour, min, sec, LOG_STR[level], file, line))
 }
 
-
-func (this *Logger) LOG_FATAL(params ...interface{}){
-	if this.checkLevel(FATAL)==false{
+func (this *Logger) LOG_FATAL(params ...interface{}) {
+	if this.checkLevel(FATAL) == false {
 		return
 	}
-	timestr:=this.LOG_DEVEL_FORMAT(FATAL)
-	context:=fmt.Sprint(params...)
+	timestr := this.LOG_DEVEL_FORMAT(FATAL)
+	context := fmt.Sprint(params...)
 	var logstr []byte
-	logstr=append(logstr,timestr...)
-	logstr=append(logstr,[]byte(context)...)
+	logstr = append(logstr, timestr...)
+	logstr = append(logstr, []byte(context)...)
 	this.Output(logstr)
 }
 
-func (this *Logger) LOG_DEBUG(params ...interface{}){
-	if this.checkLevel(DEBUG)==false{
+func (this *Logger) LOG_DEBUG(params ...interface{}) {
+	if this.checkLevel(DEBUG) == false {
 		return
 	}
-	timestr:=this.LOG_DEVEL_FORMAT(DEBUG)
-	
+	timestr := this.LOG_DEVEL_FORMAT(DEBUG)
+
 	//context:=fmt.Sprintf(format,params...)
-	context:=fmt.Sprint(params...)
+	context := fmt.Sprint(params...)
 	var logstr []byte
-	logstr=append(logstr,timestr...)
-	logstr=append(logstr,[]byte(context)...)
+	logstr = append(logstr, timestr...)
+	logstr = append(logstr, []byte(context)...)
 	this.Output(logstr)
 }
-func (this *Logger) LOG_ERROR( params ...interface{}){
-	if this.checkLevel(ERROR)==false{
+func (this *Logger) LOG_ERROR(params ...interface{}) {
+	if this.checkLevel(ERROR) == false {
 		return
 	}
-	timestr:=this.LOG_DEVEL_FORMAT(ERROR)
-	context:=fmt.Sprint(params...)
+	timestr := this.LOG_DEVEL_FORMAT(ERROR)
+	context := fmt.Sprint(params...)
 	var logstr []byte
-	logstr=append(logstr,timestr...)
-	logstr=append(logstr,[]byte(context)...)
+	logstr = append(logstr, timestr...)
+	logstr = append(logstr, []byte(context)...)
 	this.Output(logstr)
 }
 
-func (this *Logger) LOG_WARNING(params ...interface{}){
-	if this.checkLevel(WARNING)==false{
+func (this *Logger) LOG_WARNING(params ...interface{}) {
+	if this.checkLevel(WARNING) == false {
 		return
 	}
-	timestr:=this.LOG_DEVEL_FORMAT(WARNING)
-	context:=fmt.Sprint(params...)
+	timestr := this.LOG_DEVEL_FORMAT(WARNING)
+	context := fmt.Sprint(params...)
 	var logstr []byte
-	logstr=append(logstr,timestr...)
-	logstr=append(logstr,[]byte(context)...)
+	logstr = append(logstr, timestr...)
+	logstr = append(logstr, []byte(context)...)
 	this.Output(logstr)
 }
 
-func (this *Logger) LOG_INFO( params ...interface{}){
-	if this.checkLevel(INFO)==false{
+func (this *Logger) LOG_INFO(params ...interface{}) {
+	if this.checkLevel(INFO) == false {
 		return
 	}
-	timestr:=this.LOG_DEVEL_FORMAT(INFO)
-	context:=fmt.Sprint(params...)
+	timestr := this.LOG_DEVEL_FORMAT(INFO)
+	context := fmt.Sprint(params...)
 	var logstr []byte
-	logstr=append(logstr,timestr...)
-	logstr=append(logstr,[]byte(context)...)
+	logstr = append(logstr, timestr...)
+	logstr = append(logstr, []byte(context)...)
 	this.Output(logstr)
 }
 
-func (this *Logger) Output(logstr []byte){
+func (this *Logger) Output(logstr []byte) {
 	this.buf <- string(logstr)
 }
 
-func (this *Logger) openFile(){
+func (this *Logger) openFile() {
 	var err error
-	this.file,err = os.OpenFile(this.filename, os.O_APPEND|os.O_CREATE, 0666)
-	if err!=nil{
-		fmt.Println("Logger openFile err|",err)
+	this.file, err = os.OpenFile(this.filename, os.O_APPEND|os.O_CREATE, 0666)
+	if err != nil {
+		fmt.Println("Logger openFile err|", err)
 		os.Exit(1)
 	}
-	fi,err:= this.file.Stat()
-	if err!=nil{
-		fmt.Println("Logger openFile  Stat err|",err)
+	fi, err := this.file.Stat()
+	if err != nil {
+		fmt.Println("Logger openFile  Stat err|", err)
 		os.Exit(1)
 	}
 	this.size = fi.Size()
 }
 
-func (this *Logger) rename(){
+func (this *Logger) rename() {
 	//fmt.Println("rename-------------")
 	now := time.Now()
-	year,month,day :=now.Date()
-	hour,min,sec :=now.Clock()
-	filename:=fmt.Sprintf("%s/%4d-%02d-%02d-%02d-%02d-%d.log",this.logdir,year,month,day,hour,min,sec)
-	
+	year, month, day := now.Date()
+	hour, min, sec := now.Clock()
+	filename := fmt.Sprintf("%s/%4d-%02d-%02d-%02d-%02d-%d.log", this.logdir, year, month, day, hour, min, sec)
+
 	this.file.Close()
-	err := os.Rename(this.filename,filename)
-	if err!=nil{
-		fmt.Println("Logger rename err|",err)
+	err := os.Rename(this.filename, filename)
+	if err != nil {
+		fmt.Println("Logger rename err|", err)
 		os.Exit(1)
 	}
 	//
 }
-func (this *Logger)changefile(){
+func (this *Logger) changefile() {
 	this.rename()
 	this.openFile()
 	this.size = 0
@@ -169,11 +170,12 @@ func (this *Logger)changefile(){
 
 func (this *Logger) logWrite() {
 	for {
+		//fmt.Println("logwrite")
 		select {
 		case str := <-this.buf:
 			//fmt.Println(string(logstr))
-			if (this.size+ int64(len(str))) >= this.max_size{
-				fmt.Println("output",this.size+ int64(len(str)))
+			if (this.size + int64(len(str))) >= this.max_size {
+				fmt.Println("output", this.size+int64(len(str)))
 				this.changefile()
 			}
 			fmt.Fprintln(this.file, str)
@@ -184,26 +186,3 @@ func (this *Logger) logWrite() {
 	//fmt.Println(string(logstr))
 }
 
-
-
-
-var glog Logger
-func Init(){
-	glog.init()	
-}
-
-func Fatal(params ...interface{}){
-	glog.LOG_FATAL(params ...)	
-}
-func Error(params ...interface{}){
-	glog.LOG_ERROR(params ...)	
-}
-func Warning(params ...interface{}){
-	glog.LOG_WARNING(params ...)	
-}
-func Info(params ...interface{}){
-	glog.LOG_INFO(params ...)	
-}
-func Debug(params ...interface{}){
-	glog.LOG_DEBUG(params ...)	
-}

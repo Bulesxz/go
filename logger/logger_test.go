@@ -23,6 +23,7 @@ func Test_LOG_FATAL(t *testing.T){
 */
 func Test_LOG_DEBUG(t *testing.T){
 	//fmt.Println("---------------****")
+	//Init()
 	Debug("ssss|",1,2)
 	Error("ssss|",1,2)
 }

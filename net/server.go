@@ -1,145 +1,107 @@
 package net
 
 import (
-	"github.com/funny/binary"
-	"github.com/funny/link"
+	//	"fmt"
 	"github.com/Bulesxz/go/codec"
-	"github.com/Bulesxz/go/pake"
-	"reflect"
-	"encoding/json"
 	log "github.com/Bulesxz/go/logger"
-)
-var (
-	ctx pake.ContextInfo
-	mes *pake.Messages
+	"github.com/Bulesxz/go/pake"
+	"github.com/funny/link"
 )
 
-
-func init(){
-	//fmt.Println("init")
-	pake.Register(1,&pake.MessageLogin{})
-	ctx =pake.ContextInfo{}
-	ctx.SetSess(nil)
-	ctx.SetUserId(9999)
-	mes =&pake.Messages{ctx}
-}
-
-type Task struct{
+type Task struct {
 	messageCallback MessageCallback
-	conn *Connection
-	msg []byte
+	conn            *Connection
+	msg             []byte
 }
 type Server struct {
-	addr string
-	server *link.Server
+	addr            string
+	server          *link.Server
 	messageCallback MessageCallback
 	connectCallback ConnectCallback
 	closeCallback   CloseCallback
-	start          int32
-	tasks chan *Task
+	start           int32
+	tasks           chan *Task
 }
 
-type ServerHandler struct{
-	
+type ServerHandler struct {
 }
-func (this *ServerHandler)NewServer(addr string) *Server {
+
+func (this *ServerHandler) NewServer(addr string) *Server {
 	return &Server{
 		addr:            addr,
 		messageCallback: this.OnMessage,
 		connectCallback: this.OnConnection,
 		closeCallback:   this.OnClose,
-		start:1,
-		tasks: make(chan *Task,1024),///改进
+		start:           1,
+		tasks:           make(chan *Task, 1024), ///改进
 	}
 }
 
-func (this *ServerHandler) OnMessage(conn *Connection,msg []byte){
-	//fmt.Println("OnMessage",msg)
-	log.Debug("OnMessage:",msg)
-	if msg  == nil {
-		return 
+func (this *ServerHandler) OnMessage(conn *Connection, msg []byte) {
+	log.Debug("OnMessage")
+	if msg == nil {
+		return
 	}
-	r:=binary.NewBufferReader(msg[:8]);
-	_=r.ReadUint32LE()
-	pakeid := r.ReadUint32LE()
-	//fmt.Println(pake.MessageMap,"pakeid",pakeid)
-	if msgI,ok:=pake.MessageMap[pake.PakeId(pakeid)];!ok {
-		log.Error("not find")
-		return 
-	}else{
-		
-		r := reflect.New(msgI.Type())
-		if msgI.Kind() == reflect.Ptr {
-			r.Elem().Set(reflect.New(msgI.Elem().Type()))
-		}
-		t:=r.Elem().Interface().(pake.MessageI)
-		p:=mes.Decode(msg)
-		//fmt.Println(reflect.TypeOf(p))
-		json.Unmarshal(p.GetBody(),t.GetReq())
-		//fmt.Println(reflect.TypeOf(t))
-		
-		t.Process()
-		
-		b,_:=json.Marshal(t.GetRsp())
-		buf:=mes.Encode(pake.PakeId(pakeid),b)
-		//fmt.Println(buf)
-		conn.Send(buf)
+	rsp := pake.Xcode(msg)
+	err := conn.Send(rsp)
+	if err != nil {
+		log.Error(err)
 	}
-	
 }
 
-func (this *ServerHandler) OnConnection(sess *link.Session) *Connection{
-	log.Debug("OnConnection",sess.Id())
+func (this *ServerHandler) OnConnection(sess *link.Session) *Connection {
+	log.Debug("OnConnection", sess.Id())
 	return &Connection{sess}
 }
-func (this *ServerHandler) OnClose(){
+func (this *ServerHandler) OnClose() {
 	log.Debug("OnClose")
 }
 
-func (this *Server) Start()  {
+func (this *Server) Start() {
+	log.Debug("server")
 	srv, err := link.Serve("tcp", this.addr, codec.GetJsonIoCodec())
-	this.server=srv
+	this.server = srv
 	if err != nil {
 		log.Error("link.Serve err|", err)
-		return 
+		return
 	}
-	
+
 	go this.Dotask()
-	
-	for this.start==1{
+
+	for this.start == 1 {
 		session, err := srv.Accept()
 		if err != nil {
 			log.Error("srv.Accept err|", err)
-			return 
+			return
 		}
 		//fmt.Println("Accept")
-		go func(session *link.Session){
-			conn:= this.connectCallback(session) //此处考虑池化
-			for{
+		go func(session *link.Session) {
+			conn := this.connectCallback(session) //此处考虑池化
+			for {
 				var msg []byte
 				err = conn.Receive(&msg)
-				if err!=nil{
+				if err != nil {
 					//log.Error(" session.Receive err|", err)
 					this.closeCallback()
-					return 
+					return
 				}
 				//fmt.Println("Receive")
-				
-				go  this.messageCallback(conn,msg)
+
+				go this.messageCallback(conn, msg)
 				//this.tasks <- &Task{this.messageCallback,conn,msg}
-		//		fmt.Println("Receive")
+				//		fmt.Println("Receive")
 			}
 		}(session)
 	}
 }
 
-func (this *Server) stop(){
-	this.start=0;
+func (this *Server) stop() {
+	this.start = 0
 }
 
-func (this *Server) Dotask(){
+func (this *Server) Dotask() {
 	for {
-		task := <- this.tasks
-    	task.messageCallback(task.conn,task.msg)
+		task := <-this.tasks
+		task.messageCallback(task.conn, task.msg)
 	}
 }
