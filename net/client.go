@@ -1,7 +1,6 @@
 package net
 
 import (
-	//"fmt"
 	"github.com/Bulesxz/go/codec"
 	log "github.com/Bulesxz/go/logger"
 	timewheel "github.com/Bulesxz/go/time"
@@ -86,7 +85,7 @@ func (this *Client) SendTimeOut(timeout time.Duration, msg interface{}) ([]byte,
 			//fmt.Println("closeChan")
 			return
 		default: //超时 干掉连接
-			log.Info("timeout")
+			log.Debug("timeout")
 			this.errChan <- nil
 			close(this.recvBuf)
 			this.Close()
@@ -99,9 +98,9 @@ func (this *Client) SendTimeOut(timeout time.Duration, msg interface{}) ([]byte,
 		closeChan <- true //关掉timeout
 		return nil, err
 	}
-
 	err = <-errChan
 	if err != nil {
+		log.Error("this.Send <-errChan err|", err)
 		close(closeChan)
 		return nil, err
 	}

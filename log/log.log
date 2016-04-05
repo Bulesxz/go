@@ -167,3 +167,599 @@
 2016-04-04:18:54:36[LOG_DEBUG]G:/go/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
 2016-04-04:18:54:36[LOG_DEBUG]G:/go/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
 2016-04-04:18:54:36[LOG_DEBUG]G:/go/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:12:58:41[LOG_INFO]G:/gopath/src/github.com/Bulesxz/go/main.go:12 |-------
+2016-04-05:12:58:41[LOG_INFO]G:/gopath/src/github.com/Bulesxz/go/main.go:14 |serh.NewServer
+2016-04-05:12:58:41[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:61 |server
+2016-04-05:12:58:53[LOG_INFO]G:/gopath/src/github.com/Bulesxz/go/main.go:12 |-------
+2016-04-05:12:58:53[LOG_INFO]G:/gopath/src/github.com/Bulesxz/go/main.go:14 |serh.NewServer
+2016-04-05:12:58:53[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:61 |server
+2016-04-05:12:59:39[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection1
+2016-04-05:12:59:39[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection2
+2016-04-05:12:59:39[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection3
+2016-04-05:12:59:39[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection4
+2016-04-05:12:59:39[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection5
+2016-04-05:12:59:39[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection6
+2016-04-05:12:59:39[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection7
+2016-04-05:12:59:39[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection8
+2016-04-05:12:59:39[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection9
+2016-04-05:12:59:39[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection10
+2016-04-05:12:59:41[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:12:59:41[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:12:59:41[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:12:59:41[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:12:59:41[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:12:59:41[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:12:59:41[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:12:59:41[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:12:59:41[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:12:59:41[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:04:28[LOG_INFO]G:/gopath/src/github.com/Bulesxz/go/main.go:12 |-------
+2016-04-05:13:04:28[LOG_INFO]G:/gopath/src/github.com/Bulesxz/go/main.go:14 |serh.NewServer
+2016-04-05:13:04:28[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:61 |server
+2016-04-05:13:04:31[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection1
+2016-04-05:13:04:31[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection2
+2016-04-05:13:04:31[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection3
+2016-04-05:13:04:31[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection4
+2016-04-05:13:04:31[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection5
+2016-04-05:13:04:31[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection6
+2016-04-05:13:04:31[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection7
+2016-04-05:13:04:31[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection8
+2016-04-05:13:04:31[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection9
+2016-04-05:13:04:31[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection10
+2016-04-05:13:04:33[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:04:33[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:04:33[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:04:33[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:04:33[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:04:33[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:04:33[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:04:33[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:04:33[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:04:33[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:07:12[LOG_INFO]G:/gopath/src/github.com/Bulesxz/go/main.go:12 |-------
+2016-04-05:13:07:12[LOG_INFO]G:/gopath/src/github.com/Bulesxz/go/main.go:14 |serh.NewServer
+2016-04-05:13:07:12[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:61 |server
+2016-04-05:13:07:56[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection1
+2016-04-05:13:07:56[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection2
+2016-04-05:13:07:56[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection3
+2016-04-05:13:07:56[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection4
+2016-04-05:13:07:56[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection5
+2016-04-05:13:07:56[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection6
+2016-04-05:13:07:56[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection7
+2016-04-05:13:07:56[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection8
+2016-04-05:13:07:56[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection9
+2016-04-05:13:07:56[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection10
+2016-04-05:13:07:58[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:07:58[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:07:58[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:07:58[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:07:58[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:07:58[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:07:58[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:07:58[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:07:58[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:07:58[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:07:58[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:07:58[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:07:58[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:07:58[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:07:58[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:07:58[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:07:58[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:07:58[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:07:58[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:07:58[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:11:28[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection11
+2016-04-05:13:11:28[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection12
+2016-04-05:13:11:28[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection13
+2016-04-05:13:11:28[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection14
+2016-04-05:13:11:28[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection15
+2016-04-05:13:11:28[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection16
+2016-04-05:13:11:28[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection17
+2016-04-05:13:11:28[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection18
+2016-04-05:13:11:28[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection19
+2016-04-05:13:11:28[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection20
+2016-04-05:13:11:31[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:11:31[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:11:31[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:11:31[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:11:31[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:11:31[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:11:31[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:11:31[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:11:31[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:11:31[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:11:31[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:11:31[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:11:31[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:11:31[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:11:31[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:11:31[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:11:31[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:11:31[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:11:31[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:11:31[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:12:27[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection21
+2016-04-05:13:12:27[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection22
+2016-04-05:13:12:27[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection23
+2016-04-05:13:12:27[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection24
+2016-04-05:13:12:27[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection25
+2016-04-05:13:12:27[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection26
+2016-04-05:13:12:27[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection27
+2016-04-05:13:12:27[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection28
+2016-04-05:13:12:27[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection29
+2016-04-05:13:12:27[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection30
+2016-04-05:13:12:29[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:12:29[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:12:29[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:12:29[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:12:29[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:12:29[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:12:29[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:12:29[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:12:29[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:12:29[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:12:29[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:12:29[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:12:29[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:12:29[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:12:29[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:12:29[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:12:29[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:12:29[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:12:29[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:12:29[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:13:49[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection31
+2016-04-05:13:13:49[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection32
+2016-04-05:13:13:49[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection33
+2016-04-05:13:13:49[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection34
+2016-04-05:13:13:49[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection35
+2016-04-05:13:13:50[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection36
+2016-04-05:13:13:50[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection37
+2016-04-05:13:13:50[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection38
+2016-04-05:13:13:50[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection39
+2016-04-05:13:13:50[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection40
+2016-04-05:13:13:52[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:13:52[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:13:52[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:13:52[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:13:52[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:13:52[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:13:52[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:13:52[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:13:52[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:13:52[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:13:52[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:13:52[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:13:52[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:13:52[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:13:52[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:13:52[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:13:52[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:13:52[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:13:52[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:13:52[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:14:11[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection41
+2016-04-05:13:14:11[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection42
+2016-04-05:13:14:11[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection43
+2016-04-05:13:14:11[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection44
+2016-04-05:13:14:11[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection45
+2016-04-05:13:14:11[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection46
+2016-04-05:13:14:11[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection47
+2016-04-05:13:14:11[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection48
+2016-04-05:13:14:11[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection49
+2016-04-05:13:14:11[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection50
+2016-04-05:13:14:13[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:14:13[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:14:13[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:14:13[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:14:13[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:14:13[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:14:13[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:14:13[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:14:13[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:14:13[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:14:13[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:14:13[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:14:13[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:14:13[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:14:13[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:14:13[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:14:13[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:14:13[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:14:13[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:14:13[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:15:34[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection51
+2016-04-05:13:15:34[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection52
+2016-04-05:13:15:34[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection53
+2016-04-05:13:15:34[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection54
+2016-04-05:13:15:34[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection55
+2016-04-05:13:15:34[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection56
+2016-04-05:13:15:34[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection57
+2016-04-05:13:15:34[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection58
+2016-04-05:13:15:34[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection59
+2016-04-05:13:15:34[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection60
+2016-04-05:13:15:36[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:15:36[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:15:36[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:15:36[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:15:36[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:15:36[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:15:36[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:15:36[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:15:36[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:15:36[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:15:36[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:15:36[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:15:36[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:15:36[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:15:36[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:15:36[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:15:36[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:15:36[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:15:36[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:15:36[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:16:05[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection61
+2016-04-05:13:16:05[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection62
+2016-04-05:13:16:05[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection63
+2016-04-05:13:16:05[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection64
+2016-04-05:13:16:05[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection65
+2016-04-05:13:16:05[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection66
+2016-04-05:13:16:05[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection67
+2016-04-05:13:16:05[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection68
+2016-04-05:13:16:05[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection69
+2016-04-05:13:16:05[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection70
+2016-04-05:13:16:07[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:16:07[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:16:07[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:16:07[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:16:07[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:16:07[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:16:07[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:16:07[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:16:07[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:16:07[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:16:07[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:16:07[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:16:07[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:16:07[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:16:07[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:16:07[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:16:07[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:16:07[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:16:07[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:16:07[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:16:47[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection71
+2016-04-05:13:16:47[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection72
+2016-04-05:13:16:47[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection73
+2016-04-05:13:16:47[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection74
+2016-04-05:13:16:47[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection75
+2016-04-05:13:16:47[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection76
+2016-04-05:13:16:47[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection77
+2016-04-05:13:16:47[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection78
+2016-04-05:13:16:47[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection79
+2016-04-05:13:16:47[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection80
+2016-04-05:13:16:49[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:16:49[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:16:49[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:16:49[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:16:49[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:16:49[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:16:49[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:16:49[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:16:49[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:16:49[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:16:49[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:16:49[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:16:49[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:16:49[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:16:49[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:16:49[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:16:49[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:16:49[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:16:49[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:16:49[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:17:10[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection81
+2016-04-05:13:17:10[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection82
+2016-04-05:13:17:10[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection83
+2016-04-05:13:17:10[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection84
+2016-04-05:13:17:10[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection85
+2016-04-05:13:17:10[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection86
+2016-04-05:13:17:10[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection87
+2016-04-05:13:17:10[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection88
+2016-04-05:13:17:10[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection89
+2016-04-05:13:17:10[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection90
+2016-04-05:13:17:13[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:17:13[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:17:13[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:17:13[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:17:13[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:17:13[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:17:13[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:17:13[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:17:13[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:17:13[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:17:13[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:17:13[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:17:13[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:17:13[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:17:13[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:17:13[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:17:13[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:17:13[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:17:13[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:17:13[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:17:50[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection91
+2016-04-05:13:17:50[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection92
+2016-04-05:13:17:50[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection93
+2016-04-05:13:17:50[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection94
+2016-04-05:13:17:50[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection95
+2016-04-05:13:17:50[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection96
+2016-04-05:13:17:50[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection97
+2016-04-05:13:17:50[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection98
+2016-04-05:13:17:50[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection99
+2016-04-05:13:17:50[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection100
+2016-04-05:13:17:52[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:17:52[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:17:52[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:17:52[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:17:52[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:17:52[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:17:52[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:17:52[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:17:52[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:17:52[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:17:52[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:17:52[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:17:52[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:17:52[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:17:52[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:17:52[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:17:52[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:17:52[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:17:52[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:17:52[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:19:27[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection101
+2016-04-05:13:19:27[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection102
+2016-04-05:13:19:27[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection103
+2016-04-05:13:19:27[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection104
+2016-04-05:13:19:27[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection105
+2016-04-05:13:19:27[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection106
+2016-04-05:13:19:27[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection107
+2016-04-05:13:19:27[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection108
+2016-04-05:13:19:27[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection109
+2016-04-05:13:19:27[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection110
+2016-04-05:13:19:29[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:19:29[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:19:29[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:19:29[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:19:29[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:19:29[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:19:29[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:19:29[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:19:29[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:19:29[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:19:29[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:19:29[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:19:29[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:19:29[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:19:29[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:19:29[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:19:29[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:19:29[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:19:29[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:19:29[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:20:39[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection111
+2016-04-05:13:20:39[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection112
+2016-04-05:13:20:39[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection113
+2016-04-05:13:20:39[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection114
+2016-04-05:13:20:39[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection115
+2016-04-05:13:20:39[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection116
+2016-04-05:13:20:39[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection117
+2016-04-05:13:20:39[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection118
+2016-04-05:13:20:39[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection119
+2016-04-05:13:20:39[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection120
+2016-04-05:13:20:42[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:20:42[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:20:42[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:20:42[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:20:42[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:20:42[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:20:42[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:20:42[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:20:42[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:20:42[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:20:42[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:20:42[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:20:42[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:20:42[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:20:42[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:20:42[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:20:42[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:20:42[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:20:42[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:20:42[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:22:46[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection121
+2016-04-05:13:23:46[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection122
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2016-04-05:13:24:46[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/codec/jsoncodec.go:17 |ReadUint32LE 4060082687
+2016-04-05:13:24:46[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:41 |OnMessage
+2016-04-05:13:25:02[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/codec/jsoncodec.go:17 |ReadUint32LE 0
+2016-04-05:13:25:02[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|EOF
+2016-04-05:13:25:02[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:25:10[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection124
+2016-04-05:13:27:09[LOG_INFO]G:/gopath/src/github.com/Bulesxz/go/main.go:12 |-------
+2016-04-05:13:27:09[LOG_INFO]G:/gopath/src/github.com/Bulesxz/go/main.go:14 |serh.NewServer
+2016-04-05:13:27:09[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:61 |server
+2016-04-05:13:27:18[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection1
+
+
+
+
+
+
+
+
+
+
+2016-04-05:13:32:56[LOG_INFO]G:/gopath/src/github.com/Bulesxz/go/main.go:12 |-------
+2016-04-05:13:32:56[LOG_INFO]G:/gopath/src/github.com/Bulesxz/go/main.go:14 |serh.NewServer
+2016-04-05:13:32:56[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:61 |server
+2016-04-05:13:33:03[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection1
+2016-04-05:13:33:05[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:33:05[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:34:51[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection2
+2016-04-05:13:35:10[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/codec/jsoncodec.go:18 |ReadUint32LE 168636721
+2016-04-05:13:35:10[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:41 |OnMessage
+2016-04-05:13:35:19[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/codec/jsoncodec.go:18 |ReadUint32LE 825297421
+2016-04-05:13:35:19[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:41 |OnMessage
+2016-04-05:13:35:20[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/codec/jsoncodec.go:18 |ReadUint32LE 218762545
+2016-04-05:13:35:20[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:41 |OnMessage
+2016-04-05:13:35:21[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/codec/jsoncodec.go:18 |ReadUint32LE 218762506
+2016-04-05:13:35:21[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:41 |OnMessage
+2016-04-05:13:35:21[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/codec/jsoncodec.go:18 |ReadUint32LE 218762506
+2016-04-05:13:35:21[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:41 |OnMessage
+2016-04-05:13:36:51[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/codec/jsoncodec.go:18 |ReadUint32LE 4294049546
+2016-04-05:13:36:51[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:41 |OnMessage
+2016-04-05:13:37:01[LOG_INFO]G:/gopath/src/github.com/Bulesxz/go/main.go:12 |-------
+2016-04-05:13:37:01[LOG_INFO]G:/gopath/src/github.com/Bulesxz/go/main.go:14 |serh.NewServer
+2016-04-05:13:37:01[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:61 |server
+2016-04-05:13:37:05[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection1
+2016-04-05:13:37:08[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:37:08[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:38:39[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection2
+2016-04-05:13:38:40[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/codec/jsoncodec.go:18 |ReadUint32LE 0
+2016-04-05:13:38:40[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:38:40[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:38:55[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection3
+2016-04-05:13:38:56[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/codec/jsoncodec.go:18 |ReadUint32LE 0
+2016-04-05:13:38:56[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:38:56[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:39:14[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection4
+2016-04-05:13:39:14[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/codec/jsoncodec.go:18 |ReadUint32LE 0
+2016-04-05:13:39:14[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:39:14[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:39:32[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection5
+2016-04-05:13:39:35[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:39:35[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:13:39:46[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection6
+2016-04-05:13:39:49[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:13:39:49[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:14:00:41[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection7
+2016-04-05:14:00:44[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:14:00:44[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:14:01:51[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:53 |OnConnection8
+2016-04-05:14:02:10[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/codec/jsoncodec.go:18 |ReadUint32LE 0
+2016-04-05:14:02:10[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:85 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:14:02:10[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:57 |OnClose
+2016-04-05:14:02:49[LOG_INFO]G:/gopath/src/github.com/Bulesxz/go/main.go:12 |-------
+2016-04-05:14:02:49[LOG_INFO]G:/gopath/src/github.com/Bulesxz/go/main.go:14 |serh.NewServer
+2016-04-05:14:02:49[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:62 |server
+2016-04-05:14:02:56[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:54 |OnConnection1
+2016-04-05:14:03:17[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/codec/jsoncodec.go:18 |ReadUint32LE 0
+2016-04-05:14:03:17[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:86 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:14:03:17[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:58 |OnClose
+2016-04-05:14:05:00[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:54 |OnConnection2
+2016-04-05:14:05:03[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/codec/jsoncodec.go:18 |ReadUint32LE 0
+2016-04-05:14:05:03[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:86 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:14:05:03[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:58 |OnClose
+2016-04-05:14:05:50[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:54 |OnConnection3
+2016-04-05:14:05:54[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:86 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:14:05:54[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:58 |OnClose
+2016-04-05:14:06:12[LOG_INFO]G:/gopath/src/github.com/Bulesxz/go/main.go:12 |-------
+2016-04-05:14:06:12[LOG_INFO]G:/gopath/src/github.com/Bulesxz/go/main.go:14 |serh.NewServer
+2016-04-05:14:06:12[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:62 |server
+2016-04-05:14:06:17[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:54 |OnConnection1
+2016-04-05:14:06:20[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:86 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:14:06:20[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:58 |OnClose
+2016-04-05:14:07:56[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:54 |OnConnection2
+2016-04-05:14:08:00[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:86 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:14:08:00[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:58 |OnClose
+2016-04-05:14:23:17[LOG_INFO]G:/gopath/src/github.com/Bulesxz/go/main.go:12 |-------
+2016-04-05:14:23:17[LOG_INFO]G:/gopath/src/github.com/Bulesxz/go/main.go:14 |serh.NewServer
+2016-04-05:14:23:17[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:62 |server
+2016-04-05:14:23:22[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:54 |OnConnection1
+2016-04-05:14:23:22[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:41 |OnMessage
+2016-04-05:14:23:22[LOG_ERROR]G:/gopath/src/github.com/Bulesxz/go/pake/xcode.go:21 |not find
+2016-04-05:14:23:26[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/codec/jsoncodec.go:18 |ReadUint32LE 0
+2016-04-05:14:23:26[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:86 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:14:23:26[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:58 |OnClose
+2016-04-05:14:24:08[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:54 |OnConnection2
+2016-04-05:14:24:08[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:41 |OnMessage
+2016-04-05:14:24:08[LOG_ERROR]G:/gopath/src/github.com/Bulesxz/go/pake/xcode.go:21 |not find
+2016-04-05:14:24:11[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/codec/jsoncodec.go:18 |ReadUint32LE 0
+2016-04-05:14:24:11[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:86 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:14:24:11[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:58 |OnClose
+2016-04-05:14:30:28[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:54 |OnConnection3
+2016-04-05:14:30:28[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:41 |OnMessage
+2016-04-05:14:30:28[LOG_ERROR]G:/gopath/src/github.com/Bulesxz/go/pake/xcode.go:21 |not find
+2016-04-05:14:30:31[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/codec/jsoncodec.go:18 |ReadUint32LE 0
+2016-04-05:14:30:31[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:86 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:14:30:31[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:58 |OnClose
+2016-04-05:14:32:10[LOG_INFO]G:/gopath/src/github.com/Bulesxz/go/main.go:12 |-------
+2016-04-05:14:32:10[LOG_INFO]G:/gopath/src/github.com/Bulesxz/go/main.go:14 |serh.NewServer
+2016-04-05:14:32:10[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:62 |server
+2016-04-05:14:32:22[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:54 |OnConnection1
+2016-04-05:14:32:22[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:41 |OnMessage
+2016-04-05:14:32:22[LOG_ERROR]G:/gopath/src/github.com/Bulesxz/go/pake/xcode.go:21 |not find
+2016-04-05:14:32:25[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/codec/jsoncodec.go:18 |ReadUint32LE 0
+2016-04-05:14:32:25[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:86 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:14:32:25[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:58 |OnClose
+2016-04-05:14:40:05[LOG_INFO]G:/gopath/src/github.com/Bulesxz/go/main.go:12 |-------
+2016-04-05:14:40:05[LOG_INFO]G:/gopath/src/github.com/Bulesxz/go/main.go:14 |serh.NewServer
+2016-04-05:14:40:05[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:62 |server
+2016-04-05:14:40:22[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:54 |OnConnection1
+2016-04-05:14:40:22[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:41 |OnMessage
+2016-04-05:14:40:22[LOG_ERROR]G:/gopath/src/github.com/Bulesxz/go/pake/xcode.go:21 |not find
+2016-04-05:14:40:26[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/codec/jsoncodec.go:18 |ReadUint32LE 0
+2016-04-05:14:40:26[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:86 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:14:40:26[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:58 |OnClose
+2016-04-05:14:45:31[LOG_INFO]G:/gopath/src/github.com/Bulesxz/go/main.go:12 |-------
+2016-04-05:14:45:31[LOG_INFO]G:/gopath/src/github.com/Bulesxz/go/main.go:14 |serh.NewServer
+2016-04-05:14:45:31[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:62 |server
+2016-04-05:14:45:38[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:54 |OnConnection1
+2016-04-05:14:45:38[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:41 |OnMessage
+2016-04-05:14:45:39[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/codec/jsoncodec.go:18 |ReadUint32LE 0
+2016-04-05:14:45:39[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:86 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:14:45:39[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:58 |OnClose
+2016-04-05:15:23:12[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/pake/pake.go:161 |id1Register*pake.MessageLogin
+2016-04-05:15:23:12[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:60 |server start....
+2016-04-05:15:23:26[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:52 |OnConnection1
+2016-04-05:15:23:26[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:82 |Receive[78 0 0 0 51 0 0 0 123 34 73 100 34 58 49 44 34 83 101 113 34 58 50 44 34 85 115 101 114 73 100 34 58 34 49 50 53 50 50 50 34 44 34 83 101 115 115 34 58 34 115 101 115 115 105 111 110 34 125 123 34 97 34 58 49 44 34 98 34 58 50 44 34 99 34 58 34 115 120 122 34 125] <nil>
+2016-04-05:15:23:26[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:40 |OnMessage
+2016-04-05:15:23:26[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/pake/login.go:31 |process&{1 2 sxz}
+2016-04-05:15:23:26[LOG_WARNING]G:/gopath/src/github.com/Bulesxz/go/codec/jsoncodec.go:17 |ReadUint32LE 0
+2016-04-05:15:23:26[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:82 |Receive[] WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:15:23:26[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:84 | session.Receive err|WSARecv tcp 127.0.0.1:9000: An existing connection was forcibly closed by the remote host.
+2016-04-05:15:23:26[LOG_DEBUG]G:/gopath/src/github.com/Bulesxz/go/net/server.go:56 |OnClose

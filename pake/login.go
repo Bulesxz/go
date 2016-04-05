@@ -1,7 +1,8 @@
 package pake
 
 import (
-	"fmt"
+//	"fmt"
+	log "github.com/Bulesxz/go/logger"
 )
 
 type LoginReq struct {
@@ -27,7 +28,7 @@ func (this *MessageLogin) Init(c *ContextInfo) {
 	//fmt.Println("init")
 }
 func (this *MessageLogin) Process() {
-	fmt.Println("process", this.GetReq())
+	log.Debug("process", this.GetReq())
 	//this.Rsp.A=1
 	//this.Rsp.B=1
 	//this.Rsp.C="ssssssssss"
@@ -43,5 +44,5 @@ func (this *MessageLogin) GetRsp() interface{} {
 }
 
 func init() {
-	Register(1, &MessageLogin{})
+	Register(LoginId, &MessageLogin{})
 }

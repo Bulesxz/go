@@ -1,7 +1,6 @@
 package net
 
 import (
-	//	"fmt"
 	"github.com/Bulesxz/go/codec"
 	log "github.com/Bulesxz/go/logger"
 	"github.com/Bulesxz/go/pake"
@@ -58,7 +57,7 @@ func (this *ServerHandler) OnClose() {
 }
 
 func (this *Server) Start() {
-	log.Debug("server")
+	log.Debug("server start....")
 	srv, err := link.Serve("tcp", this.addr, codec.GetJsonIoCodec())
 	this.server = srv
 	if err != nil {
@@ -80,13 +79,12 @@ func (this *Server) Start() {
 			for {
 				var msg []byte
 				err = conn.Receive(&msg)
+				log.Debug("Receive",msg,err)
 				if err != nil {
-					//log.Error(" session.Receive err|", err)
+					log.Debug(" session.Receive err|", err)
 					this.closeCallback()
 					return
 				}
-				//fmt.Println("Receive")
-
 				go this.messageCallback(conn, msg)
 				//this.tasks <- &Task{this.messageCallback,conn,msg}
 				//		fmt.Println("Receive")

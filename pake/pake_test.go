@@ -73,5 +73,5 @@ func Test_Messeage(t *testing.T) {
 	if mesr == nil {
 		fmt.Println("mesr")
 	}
-	fmt.Println(mesr)
+	fmt.Println("mesr",mesr)
 }

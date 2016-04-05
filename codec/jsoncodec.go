@@ -5,6 +5,7 @@ import(
 	"github.com/funny/link"
 	"github.com/funny/binary"
 	log "github.com/Bulesxz/go/logger"
+//	"fmt"
 )
 
 type JsonIo struct{
@@ -12,14 +13,14 @@ type JsonIo struct{
 
 func (this JsonIo) Read(r *binary.Reader) []byte{
 	b := r.ReadUint32LE()
-	//fmt.Println("read.....",b)
 	if b == 0 || b > (65535) {
-		log.Debug("ReadUint32LE ",b)
+		log.Warning("ReadUint32LE ",b)
 		return nil
 	}
-	buf := make([]byte, b+4+4)//包长度+id +body
+	buf := make([]byte, b+4)//包长度+id +body
 	binary.PutUint32LE(buf,b)
 	r.ReadFull(buf[4:])
+	
 	return buf
 }
 func (this JsonIo) Write(w *binary.Writer,buf []byte){

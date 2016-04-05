@@ -4,7 +4,7 @@ package pake
 import (
 	"bytes"
 	"encoding/json"
-	"fmt"
+//	"fmt"
 	log "github.com/Bulesxz/go/logger"
 	"github.com/funny/binary"
 	"reflect"
@@ -48,6 +48,9 @@ func (this *ContextInfo) SetSeq(seq uint64) {
 }
 func (this *ContextInfo) SetSess(sess string) {
 	this.Sess = sess
+}
+func (this *ContextInfo) SetId(id PakeId) {
+	this.Id = id
 }
 
 type Messages struct {
@@ -150,11 +153,11 @@ func (this *Messages) Decode(msg []byte) *Pake {
 }
 
 func (this *Messages) Init(sess string) {
-	this.Context.SetSess(sess)
-	this.Context.SetUserId("sxz")
+	//this.Context.SetSess(sess)
+	//this.Context.SetUserId("sxz")
 }
 
 func Register(id PakeId, msqI MessageI) {
-	fmt.Println("id", id, "Register", reflect.TypeOf(msqI))
+	log.Debug("id", id, "Register", reflect.TypeOf(msqI))
 	MessageMap[id] = reflect.ValueOf(msqI)
 }

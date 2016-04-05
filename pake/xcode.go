@@ -11,13 +11,10 @@ func Xcode(msg []byte) []byte {
 	var mes Messages
 	p := mes.Decode(msg)
 	if p == nil {
-		fmt.Println("mes.Decode p==nil")
 		log.Error("mes.Decode p==nil")
 		return nil
 	}
-
 	if msgI, ok := MessageMap[PakeId(p.GetSession().Id)]; !ok {
-		fmt.Println("not find")
 		log.Error("not find")
 		return nil
 	} else {
