@@ -16,7 +16,8 @@ func BenchmarkFunc(n int32, taskthread int, f func() bool) (float64, int32) {
 		wg.Add(1)
 		go func(i int) {
 			//fmt.Println("go add ", i)
-			for atomic.AddInt32(&n, -1) >= 0 {
+			for atomic.AddInt32(&n, -1) >=0 {
+				//fmt.Println("go add ", i)
 				fail := f()
 				if fail == false {
 					atomic.AddInt32(&failNum, 1)

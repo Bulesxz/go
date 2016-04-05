@@ -2,7 +2,6 @@ package pake
 
 import (
 	"encoding/json"
-	"fmt"
 	log "github.com/Bulesxz/go/logger"
 	"reflect"
 )
@@ -24,7 +23,7 @@ func Xcode(msg []byte) []byte {
 		}
 		m := r.Elem().Interface().(MessageI)
 		m.Init(p.GetSession())
-		fmt.Println(m)
+		//fmt.Println(m)
 		err := json.Unmarshal(p.GetBody(), m.GetReq())
 		if err != nil {
 			log.Error(err)
@@ -39,6 +38,7 @@ func Xcode(msg []byte) []byte {
 			log.Error(err)
 			return nil
 		}
+		mes.Context = *(p.GetSession())
 		return mes.Encode(buf)
 	}
 }
