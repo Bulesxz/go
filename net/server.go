@@ -41,7 +41,7 @@ func (this *ServerHandler) OnMessage(conn *Connection, msg []byte) {
 	if msg == nil {
 		return
 	}
-	rsp := pake.Xcode(msg)
+	rsp := pake.Deal(msg)
 	err := conn.Send(rsp)
 	if err != nil {
 		log.Error(err)

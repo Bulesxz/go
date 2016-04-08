@@ -6,7 +6,7 @@ import (
 	"reflect"
 )
 
-func Xcode(msg []byte) []byte {
+func Deal(msg []byte) []byte {
 	var mes Messages
 	p := mes.Decode(msg)
 	if p == nil {
