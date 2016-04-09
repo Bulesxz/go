@@ -128,6 +128,7 @@ func (this *Logger) LOG_INFO(params ...interface{}) {
 	this.Output(logstr)
 }
 
+
 func (this *Logger) Output(logstr []byte) {
 	this.buf <- string(logstr)
 }
