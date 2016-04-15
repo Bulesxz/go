@@ -1,6 +1,7 @@
 package net
 
 import (
+	"fmt"
 	"github.com/Bulesxz/go/codec"
 	log "github.com/Bulesxz/go/logger"
 	"github.com/Bulesxz/go/pake"
@@ -38,7 +39,10 @@ func (this *ServerHandler) NewServer(addr string) *Server {
 
 func (this *ServerHandler) OnMessage(conn *Connection, msg []byte) {
 	log.Debug("OnMessage")
+	//fmt.Println("Onmessage")
 	if msg == nil {
+		log.Debug("mgs == nil")
+		//fmt.Println("Onmessage111111")
 		return
 	}
 	rsp := pake.Deal(msg)
@@ -46,6 +50,7 @@ func (this *ServerHandler) OnMessage(conn *Connection, msg []byte) {
 	if err != nil {
 		log.Error(err)
 	}
+	fmt.Println("send rsp",rsp)
 }
 
 func (this *ServerHandler) OnConnection(sess *link.Session) *Connection {

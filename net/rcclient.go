@@ -61,6 +61,7 @@ func (this *RcClient) ConnetcTimeOut(timeout time.Duration) error {
 		return err
 	}
 	this.Session = session
+	go this.run()
 	return err
 }
 
@@ -101,6 +102,7 @@ func (this *RcClient)  Call(mes *pake.Messages,req interface{},timeout time.Dura
 	}
 
 	sendData:=mes.Encode(msg)
+	fmt.Println("sendData")
 	err=this.Send(sendData)
 	if err!=nil{
 		closeChan <-true
@@ -108,15 +110,17 @@ func (this *RcClient)  Call(mes *pake.Messages,req interface{},timeout time.Dura
 		return recvData,err
 	}
 	
+	e := <- this.errChan
+	if e!=nil{
+		log.Error(e)	
+	}
+	
 	recvData,ok := <- this.recvBuf[mes.Context.Seq]
 	if !ok{
 		log.Error("!ok")
 	}
 	
-	e := <- this.errChan
-	if e!=nil{
-		log.Error(e)	
-	}
+	
 	closeChan <-true
 	return recvData,err
 	
@@ -124,15 +128,16 @@ func (this *RcClient)  Call(mes *pake.Messages,req interface{},timeout time.Dura
 
 func (this *RcClient) run() {
 	for {
-		//fmt.Println("recvBuf。。。",recvBuf)
 		var receiveBuf []byte
 		err := this.Receive(&receiveBuf)
+		fmt.Println("1",receiveBuf)
 		if err != nil {
 			log.Error("this.Receive err|", err)
 			this.errChan <- err
 			this.Close()
 			break
 		}
+		
 		this.errChan <- nil
 		
 		mes:=this.mesPool.Get().(*pake.Messages)
@@ -146,7 +151,5 @@ func (this *RcClient) run() {
 			this.recvBuf[p.GetSession().Seq] = recvBuf
 		}*/
 		this.recvBuf[p.GetSession().Seq] <- p
-
-		this.Unlock()
 	}
 }
