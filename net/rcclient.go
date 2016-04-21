@@ -16,6 +16,7 @@ type RcClient struct {
 	protocol string
 	addr     string
 	recvBuf  map[uint64]chan interface{}
+	exit	 map[uint64]chan bool//通知recvbuf关闭了,不能写入
 	errChan  chan error
 	mesPool *sync.Pool
 	sync.Mutex
@@ -45,6 +46,7 @@ func NewRcClient(protocol, addr string) *RcClient{
 		protocol:protocol,
 		addr:addr,
 		recvBuf:make(map[uint64]chan interface{}),
+		exit:make(map[uint64]chan bool),
 		errChan:make(chan error),
 		mesPool:&sync.Pool{
         	New: func() interface{} {
@@ -70,6 +72,7 @@ func (this *RcClient)  Call(mes *pake.Messages,req interface{},timeout time.Dura
 	closeChan := make(chan bool, 1)	
 	
 	recvBuf:=make(chan interface{},1)
+	exit:=make(chan bool,1)
 	
 	this.Lock()
 	if _, ok := this.recvBuf[mes.Context.Seq]; ok {
@@ -78,6 +81,7 @@ func (this *RcClient)  Call(mes *pake.Messages,req interface{},timeout time.Dura
 		return nil,fmt.Errorf("%s","[chanrpc] repeated seq")
 	} else {
 		this.recvBuf[mes.Context.Seq] = recvBuf
+		this.exit[mes.Context.Seq] = exit
 	}
 	this.Unlock()
 	
@@ -88,9 +92,11 @@ func (this *RcClient)  Call(mes *pake.Messages,req interface{},timeout time.Dura
 			return
 		default: //超时 干掉连接
 			log.Debug("timeout")
-			this.errChan <- nil
+			//fmt.Println("timeout")
+			this.errChan <- fmt.Errorf("timeout")
+			close(exit)
 			close(recvBuf)
-			this.Close()
+			//this.Close()
 		}
 	})
 	
@@ -102,7 +108,8 @@ func (this *RcClient)  Call(mes *pake.Messages,req interface{},timeout time.Dura
 	}
 
 	sendData:=mes.Encode(msg)
-	fmt.Println("sendData")
+	//fmt.Println("sendData")
+	exit <- false
 	err=this.Send(sendData)
 	if err!=nil{
 		closeChan <-true
@@ -110,14 +117,17 @@ func (this *RcClient)  Call(mes *pake.Messages,req interface{},timeout time.Dura
 		return recvData,err
 	}
 	
-	e := <- this.errChan
-	if e!=nil{
-		log.Error(e)	
+	err= <- this.errChan
+	if err!=nil{
+		fmt.Println("err:",err)
+		log.Error(err)	
 	}
-	
+		
 	recvData,ok := <- this.recvBuf[mes.Context.Seq]
 	if !ok{
+		//fmt.Println("!ok:",ok)
 		log.Error("!ok")
+		err = fmt.Errorf("timeout")
 	}
 	
 	
@@ -130,7 +140,7 @@ func (this *RcClient) run() {
 	for {
 		var receiveBuf []byte
 		err := this.Receive(&receiveBuf)
-		fmt.Println("1",receiveBuf)
+		//fmt.Println("1",receiveBuf)
 		if err != nil {
 			log.Error("this.Receive err|", err)
 			this.errChan <- err
@@ -150,6 +160,10 @@ func (this *RcClient) run() {
 		} else {
 			this.recvBuf[p.GetSession().Seq] = recvBuf
 		}*/
-		this.recvBuf[p.GetSession().Seq] <- p
+		_,ok:= <- this.recvBuf[p.GetSession().Seq]
+		if ok{ //没有超时，则没有close ,所以可写
+			//fmt.Println("p:",p)
+			this.recvBuf[p.GetSession().Seq] <- p
+		}
 	}
 }
