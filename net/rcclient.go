@@ -95,6 +95,9 @@ func (this *RcClient)  Call(mes *pake.Messages,req interface{},timeout time.Dura
 			fmt.Println("timeout.......")
 			this.errChan <- fmt.Errorf("timeout")
 			close(exit)
+			this.Lock()
+			delete(this.recvBuf, mes.Context.Seq)
+			this.Unlock()
 			close(recvBuf)
 			//this.Close()
 		}
