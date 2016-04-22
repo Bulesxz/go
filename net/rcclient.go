@@ -123,13 +123,14 @@ func (this *RcClient)  Call(mes *pake.Messages,req interface{},timeout time.Dura
 		log.Error(err)	
 	}
 		
+	this.Lock()
 	recvData,ok := <- this.recvBuf[mes.Context.Seq]
 	if !ok{
 		//fmt.Println("!ok:",ok)
 		log.Error("!ok")
 		err = fmt.Errorf("timeout")
 	}
-	
+	this.Unlock()
 	
 	closeChan <-true
 	return recvData,err
@@ -167,10 +168,12 @@ func (this *RcClient) run() {
 			}
 		}()
 		
+		this.Lock()
 		_,ok:= <- this.exit[p.GetSession().Seq]
 		if ok{ //没有超时，则没有close ,所以可写
 			//fmt.Println("p:",p)
 			this.recvBuf[p.GetSession().Seq] <- p
 		}
+		this.Unlock()
 	}
 }
