@@ -92,7 +92,7 @@ func (this *RcClient)  Call(mes *pake.Messages,req interface{},timeout time.Dura
 			return
 		default: //超时 干掉连接
 			log.Debug("timeout")
-			//fmt.Println("timeout")
+			fmt.Println("timeout.......")
 			this.errChan <- fmt.Errorf("timeout")
 			close(exit)
 			close(recvBuf)
@@ -160,7 +160,14 @@ func (this *RcClient) run() {
 		} else {
 			this.recvBuf[p.GetSession().Seq] = recvBuf
 		}*/
-		_,ok:= <- this.recvBuf[p.GetSession().Seq]
+		
+		defer func(){     //必须要先声明defer，否则不能捕获到panic异常
+			if err := recover(); err != nil {
+				//fmt.Println(err)    //这里的err其实就是panic传入的内容
+			}
+		}()
+		
+		_,ok:= <- this.exit[p.GetSession().Seq]
 		if ok{ //没有超时，则没有close ,所以可写
 			//fmt.Println("p:",p)
 			this.recvBuf[p.GetSession().Seq] <- p

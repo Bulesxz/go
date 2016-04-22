@@ -1,8 +1,8 @@
 package pake
 
 import (
-//	"time"
-//	"math/rand"
+	"time"
+	"math/rand"
 	log "github.com/Bulesxz/go/logger"
 )
 
@@ -34,8 +34,8 @@ func (this *MessageLogin) Process() {
 	//this.Rsp.B=1
 	//this.Rsp.C="ssssssssss"
 	//fmt.Println("process",this.ContextInfo)
-	//r := rand.New(rand.NewSource(time.Now().UnixNano()))
-	//time.Sleep(time.Duration(r.Intn(1000))*time.Millisecond)
+	r := rand.New(rand.NewSource(time.Now().UnixNano()))
+	time.Sleep(time.Duration(r.Intn(1000))*time.Millisecond)
 	//fmt.Println("process",this.ContextInfo,"req",this.GetReq())
 	this.Rsp = LoginRsp(this.Req)
 }
