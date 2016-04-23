@@ -12,8 +12,8 @@ var (
 	GloablTimingWheel *timewheel.TimingWheel
 )
 
-func init() {
-	GloablTimingWheel = timewheel.NewTimingWheel(time.Millisecond*100, 50)
+func InitTimeWheel(tick time.Duration,bucket int) {
+	GloablTimingWheel = timewheel.NewTimingWheel(tick, bucket)
 	//
 }
 
