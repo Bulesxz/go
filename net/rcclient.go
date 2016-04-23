@@ -16,7 +16,7 @@ type RcClient struct {
 	protocol string
 	addr     string
 	recvBuf  map[uint64]chan interface{}
-	exit	 map[uint64]chan bool//通知recvbuf关闭了,不能写入
+	closeChan	 map[uint64]chan struct{}//通知recvbuf关闭了,不能写入
 	errChan  chan error
 	mesPool *sync.Pool
 	sync.Mutex
@@ -46,7 +46,7 @@ func NewRcClient(protocol, addr string) *RcClient{
 		protocol:protocol,
 		addr:addr,
 		recvBuf:make(map[uint64]chan interface{}),
-		exit:make(map[uint64]chan bool),
+		closeChan:make(map[uint64]chan struct{}),
 		errChan:make(chan error),
 		mesPool:&sync.Pool{
         	New: func() interface{} {
@@ -69,73 +69,86 @@ func (this *RcClient) ConnetcTimeOut(timeout time.Duration) error {
 
 func (this *RcClient)  Call(mes *pake.Messages,req interface{},timeout time.Duration) (recvData interface{}, err error) {
 
-	closeChan := make(chan bool, 1)	
-	
+	id := mes.Context.Seq
+	closeChan := make(chan struct{}, 1)	
 	recvBuf:=make(chan interface{},1)
-	exit:=make(chan bool,1)
 	
 	this.Lock()
-	if _, ok := this.recvBuf[mes.Context.Seq]; ok {
-		log.Error("[chanrpc] repeated seq ", mes.Context.Seq)
+	if _, ok := this.recvBuf[id]; ok {
+		log.Error("[chanrpc] repeated seq ", id)
 		this.Unlock()
 		return nil,fmt.Errorf("%s","[chanrpc] repeated seq")
 	} else {
-		this.recvBuf[mes.Context.Seq] = recvBuf
-		this.exit[mes.Context.Seq] = exit
+		this.recvBuf[id] = recvBuf
+		this.closeChan[id] = closeChan
 	}
 	this.Unlock()
 	
-	GloablTimingWheel.Add(timeout, func() {
-		select {
-		case <-closeChan: //正常关闭
-			//fmt.Println("closeChan")
-			return
-		default: //超时 干掉连接
-			log.Debug("timeout")
-			fmt.Println("timeout.......")
-			this.errChan <- fmt.Errorf("timeout")
-			close(exit)
-			this.Lock()
-			delete(this.recvBuf, mes.Context.Seq)
-			this.Unlock()
-			close(recvBuf)
-			//this.Close()
-		}
-	})
 	
 	msg,err:=json.Marshal(req)
-	
 	if err!=nil{
 		log.Error(err)
+		closeChan <-struct{}{}
 		return nil ,err
 	}
 
 	sendData:=mes.Encode(msg)
 	//fmt.Println("sendData")
-	exit <- false
+	
+	
+	GloablTimingWheel.Add(timeout, func() {
+		select {
+		case <-closeChan: //正常关闭  //清扫
+			//fmt.Println("closeChan")
+			close(recvBuf)
+			this.Lock()
+			delete(this.closeChan, id)
+			delete(this.recvBuf, id)
+			this.Unlock()
+			
+		default: //超时 干掉连接
+			log.Warning("timeout")
+			fmt.Println("timeout.......")
+		
+			close(recvBuf)
+			
+			this.Lock()
+			delete(this.closeChan, id)
+			delete(this.recvBuf, id)
+			this.Unlock()
+			
+			//this.Close()
+		}
+	})
+	
 	err=this.Send(sendData)
 	if err!=nil{
-		closeChan <-true
+		close(closeChan)
 		log.Error("Send err|",err)
-		return recvData,err
+		return nil,err
 	}
 	
-	err= <- this.errChan
-	if err!=nil{
-		fmt.Println("err:",err)
-		log.Error(err)	
+	
+	select {//防止没有err 阻塞
+		case err = <- this.errChan:
+		if err!=nil {
+			fmt.Println("err:",err)
+			log.Error(err)
+			close(closeChan) //
+			return nil,err
+		}
+		default:
+			//fmt.Println("no err")
 	}
-		
-	this.Lock()
-	recvData,ok := <- this.recvBuf[mes.Context.Seq]
+
+	recvData,ok := <- this.recvBuf[id]
 	if !ok{
-		//fmt.Println("!ok:",ok)
+		fmt.Println("!ok:",ok)
 		log.Error("!ok")
-		err = fmt.Errorf("timeout")
+		err = fmt.Errorf("recvBuf is close")
+		return nil,err
 	}
-	this.Unlock()
-	
-	closeChan <-true
+	close(closeChan)
 	return recvData,err
 	
 }
@@ -152,31 +165,26 @@ func (this *RcClient) run() {
 			break
 		}
 		
-		this.errChan <- nil
-		
-		mes:=this.mesPool.Get().(*pake.Messages)
-		p:=mes.Decode(receiveBuf)
-		
-		/*recvBuf:=make(chan interface{})
-		this.Lock()
-		if _, ok := this.recvBuf[p.GetSession().Seq]; ok {
-			err = log.Error("[chanrpc] repeated seq, seq=%v", p.GetSession().Seq)
-		} else {
-			this.recvBuf[p.GetSession().Seq] = recvBuf
-		}*/
-		
-		defer func(){     //必须要先声明defer，否则不能捕获到panic异常
-			if err := recover(); err != nil {
-				//fmt.Println(err)    //这里的err其实就是panic传入的内容
+		go func(){	
+			mes:=this.mesPool.Get().(*pake.Messages)
+			p:=mes.Decode(receiveBuf)
+			
+			defer func(){     //必须要先声明defer，否则不能捕获到panic异常
+				if err := recover(); err != nil {
+					fmt.Println("panic",err)    //这里的err其实就是panic传入的内容
+				}
+			}()
+			
+			//fmt.Println("p|",p)
+			
+			select{
+				case <- this.closeChan[p.GetSession().Seq] :
+					fmt.Println("closeChan is close")
+				default:
+					this.recvBuf[p.GetSession().Seq] <- p
 			}
+			this.mesPool.Put(mes)
 		}()
-		
-		this.Lock()
-		_,ok:= <- this.exit[p.GetSession().Seq]
-		if ok{ //没有超时，则没有close ,所以可写
-			//fmt.Println("p:",p)
-			this.recvBuf[p.GetSession().Seq] <- p
-		}
-		this.Unlock()
+			
 	}
 }
