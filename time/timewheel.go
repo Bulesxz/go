@@ -112,9 +112,9 @@ func timeOut(){
 }
 /*
 func main() {
-	w := NewTimingWheel(1*time.Second, 10)
+	w := NewTimingWheel(time.Millisecond*10,1000)
 	
-	w.Add(5 * time.Second,timeOut)
+	w.Add(time.Millisecond * 500,timeOut)
 	
 	time.Sleep(1000*time.Second) 
 }*/

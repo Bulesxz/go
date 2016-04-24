@@ -113,8 +113,8 @@ func (this *RcClient)  Call(mes *pake.Messages,req interface{},timeout time.Dura
 			close(recvBuf)
 			
 			this.Lock()
-			delete(this.closeChan, id)
 			delete(this.recvBuf, id)
+			delete(this.closeChan, id)
 			this.Unlock()
 			
 			//this.Close()
@@ -132,16 +132,31 @@ func (this *RcClient)  Call(mes *pake.Messages,req interface{},timeout time.Dura
 	select {//防止没有err 阻塞
 		case err = <- this.errChan:
 		if err!=nil {
+			close(closeChan) //
 			fmt.Println("err:",err)
 			log.Error(err)
-			close(closeChan) //
 			return nil,err
 		}
 		default:
-			//fmt.Println("no err")
+		//	fmt.Println("no err")
 	}
 
-	recvData,ok := <- this.recvBuf[id]
+	 defer func(){     //必须要先声明defer，否则不能捕获到panic异常
+                                if err := recover(); err != nil {
+                                        log.Error("panic",err)    //这里的err其实就是panic传入的内容
+                                }
+         }()
+	
+	this.Lock()
+	receiveBuf,ok:= this.recvBuf[id]
+	this.Unlock()
+	if !ok{
+		fmt.Println("receiveBuf is delete")
+		log.Warning("receiveBuf is delete")
+		err = fmt.Errorf("receiveBuf is delete")
+		return nil,err
+	}
+	recvData,ok= <-receiveBuf
 	if !ok{
 		fmt.Println("!ok:",ok)
 		log.Error("!ok")
@@ -174,14 +189,25 @@ func (this *RcClient) run() {
 					fmt.Println("panic",err)    //这里的err其实就是panic传入的内容
 				}
 			}()
-			
-			//fmt.Println("p|",p)
-			
-			select{
-				case <- this.closeChan[p.GetSession().Seq] :
-					fmt.Println("closeChan is close")
-				default:
-					this.recvBuf[p.GetSession().Seq] <- p
+			this.Lock();	
+			closeChan,ok:=  this.closeChan[p.GetSession().Seq]
+			this.Unlock();
+			if !ok{
+				fmt.Println("closeChan is delete")
+			} else {
+				this.Lock();
+				recvChan,ok:= this.recvBuf[p.GetSession().Seq];
+				this.Unlock();
+				if !ok{
+					fmt.Println("recvChan is delete")
+				}else {	
+					select{
+					case <- closeChan :
+						fmt.Println("closeChan is close")
+					default:
+						recvChan <- p
+					}
+				}
 			}
 			this.mesPool.Put(mes)
 		}()
